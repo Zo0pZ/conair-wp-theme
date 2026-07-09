@@ -449,6 +449,13 @@ select.field {
   --nav-foreground-color: #9a9a9a;
 }
 
+/* WP core hides the mobile overlay by default until .is-menu-open is added,
+   but the Tailwind CDN's Preflight reset (loaded after WP core CSS) overrides
+   that default, leaving the overlay permanently visible. Restore it explicitly. */
+.wp-block-navigation__responsive-container:not(.is-menu-open) {
+  display: none !important;
+}
+
 .wp-block-navigation .wp-block-navigation-item__content {
   color: #9a9a9a;
   transition: color 0.15s;
