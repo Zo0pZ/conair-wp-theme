@@ -480,6 +480,29 @@ select.field {
   justify-content: center !important;
 }
 
+/* WP core never defines a "show inline on desktop, collapse to hamburger below
+   this width" breakpoint itself — that's left entirely to the theme. Without it,
+   core CSS unconditionally hides .wp-block-navigation__responsive-container and
+   unconditionally shows the hamburger button at every viewport width. Matches the
+   md: (768px) breakpoint already used elsewhere in this theme's markup. */
+@media (min-width: 768px) {
+  .wp-block-navigation__responsive-container-open {
+    display: none !important;
+  }
+
+  .wp-block-navigation__responsive-container-close {
+    display: none !important;
+  }
+
+  .wp-block-navigation__responsive-container {
+    display: flex !important;
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+}
+
 /* Mobile overlay panel */
 .wp-block-navigation__responsive-container.is-menu-open {
   background-color: #0f0f0f !important;
