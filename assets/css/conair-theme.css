@@ -467,11 +467,37 @@ select.field {
 .wp-block-navigation .wp-block-navigation-item__content {
   color: #9a9a9a;
   transition: color 0.15s;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .wp-block-navigation .wp-block-navigation-item__content:hover,
 .wp-block-navigation .wp-block-navigation-item__content:focus {
   color: #ffffff;
+}
+
+/* Top-level menu items were only 0.1rem apart (a blockGap value set on the
+   Navigation block itself when its menu was assigned via the Site Editor —
+   that's a per-instance customization stored in the database, not something
+   editable in this theme file, so it's overridden here via CSS instead using
+   WP core's own stable classnames). Direct-child selector keeps this to
+   top-level items only, leaving dropdown item spacing untouched. */
+.wp-block-navigation__container > .wp-block-navigation-item {
+  margin-right: 1.4rem;
+}
+
+.wp-block-navigation__container > .wp-block-navigation-item:last-child {
+  margin-right: 0;
+}
+
+/* Separate the menu from the phone/quote cluster, and the phone numbers
+   from the CTA button, rather than everything reading as one dense strip. */
+.conair-nav-group {
+  gap: 1.75rem !important;
+}
+
+.conair-header-contacts .btn-teal {
+  margin-left: 1rem !important;
 }
 
 /* Hamburger / close icon button */
