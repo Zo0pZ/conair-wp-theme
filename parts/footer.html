@@ -52,17 +52,22 @@
 <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted"} -->
 <h3 class="wp-block-heading has-muted-color has-text-color" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Services</h3>
 <!-- /wp:heading -->
+<!-- Links below are hardcoded to /conair/ since this site is installed in that
+     subdirectory. Unlike patterns/*.php (which WordPress includes as real PHP,
+     so home_url() works), template parts are pure block markup with no PHP
+     execution — if the site ever moves to its own domain/root, these need
+     updating by hand. -->
 <!-- wp:html -->
 <ul class="flex flex-col gap-2.5 list-none p-0 m-0 text-sm" style="color:#9a9a9a;">
-  <li><a href="/services/grease-extract-cleaning/" class="hover:text-white transition-colors">Grease Extract Cleaning</a></li>
-  <li><a href="/services/ventilation-cleaning/" class="hover:text-white transition-colors">General Ventilation Cleaning</a></li>
-  <li><a href="/services/tumble-dryer-extraction-cleaning/" class="hover:text-white transition-colors">Tumble Dryer Extraction</a></li>
-  <li><a href="/services/pizza-flue-sweeping/" class="hover:text-white transition-colors">Pizza Flue Sweeping</a></li>
-  <li><a href="/services/access-door-installation/" class="hover:text-white transition-colors">Access Door Installation</a></li>
-  <li><a href="/services/extractor-fan-replacement/" class="hover:text-white transition-colors">Extractor Fan Replacements</a></li>
-  <li><a href="/services/canopy-hood-installation/" class="hover:text-white transition-colors">Canopy Hood Installations</a></li>
-  <li><a href="/services/supply-air-systems/" class="hover:text-white transition-colors">Supply Air Systems</a></li>
-  <li><a href="/services/ductwork-alterations/" class="hover:text-white transition-colors">Ductwork &amp; Filter Supply</a></li>
+  <li><a href="/conair/services/grease-extract-cleaning/" class="hover:text-white transition-colors">Grease Extract Cleaning</a></li>
+  <li><a href="/conair/services/ventilation-cleaning/" class="hover:text-white transition-colors">General Ventilation Cleaning</a></li>
+  <li><a href="/conair/services/tumble-dryer-extraction-cleaning/" class="hover:text-white transition-colors">Tumble Dryer Extraction</a></li>
+  <li><a href="/conair/services/pizza-flue-sweeping/" class="hover:text-white transition-colors">Pizza Flue Sweeping</a></li>
+  <li><a href="/conair/services/access-door-installation/" class="hover:text-white transition-colors">Access Door Installation</a></li>
+  <li><a href="/conair/services/extractor-fan-replacement/" class="hover:text-white transition-colors">Extractor Fan Replacements</a></li>
+  <li><a href="/conair/services/canopy-hood-installation/" class="hover:text-white transition-colors">Canopy Hood Installations</a></li>
+  <li><a href="/conair/services/supply-air-systems/" class="hover:text-white transition-colors">Supply Air Systems</a></li>
+  <li><a href="/conair/services/ductwork-alterations/" class="hover:text-white transition-colors">Ductwork &amp; Filter Supply</a></li>
 </ul>
 <!-- /wp:html -->
 </div>
@@ -75,10 +80,10 @@
 <!-- /wp:heading -->
 <!-- wp:html -->
 <ul class="flex flex-col gap-2 list-none p-0 m-0 mb-8 text-sm" style="color:#9a9a9a;">
-  <li><a href="/areas/bristol/" class="hover:text-white transition-colors">Bristol &amp; surrounds</a></li>
-  <li><a href="/areas/weston-super-mare/" class="hover:text-white transition-colors">Weston-super-Mare</a></li>
-  <li><a href="/areas/taunton-bridgwater/" class="hover:text-white transition-colors">Bridgwater &amp; Taunton</a></li>
-  <li><a href="/areas/clevedon-nailsea-burnham/" class="hover:text-white transition-colors">Clevedon, Nailsea &amp; Burnham</a></li>
+  <li><a href="/conair/areas/bristol/" class="hover:text-white transition-colors">Bristol &amp; surrounds</a></li>
+  <li><a href="/conair/areas/weston-super-mare/" class="hover:text-white transition-colors">Weston-super-Mare</a></li>
+  <li><a href="/conair/areas/taunton-bridgwater/" class="hover:text-white transition-colors">Bridgwater &amp; Taunton</a></li>
+  <li><a href="/conair/areas/clevedon-nailsea-burnham/" class="hover:text-white transition-colors">Clevedon, Nailsea &amp; Burnham</a></li>
 </ul>
 <!-- /wp:html -->
 <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted"} -->
@@ -109,7 +114,7 @@
 <!-- /wp:html -->
 <!-- wp:html -->
 <ul class="flex gap-5 list-none p-0 m-0 text-sm" style="color:#9a9a9a;">
-  <li><a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
+  <li><a href="/conair/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
 </ul>
 <!-- /wp:html -->
 </div>

@@ -7,11 +7,14 @@
 <!-- wp:group {"tagName":"section","className":"hero-bg grid-overlay","style":{"spacing":{"padding":{"top":"5rem","bottom":"5rem","right":"1.5rem","left":"1.5rem"}}}} -->
 <section class="wp-block-group hero-bg grid-overlay" style="padding-top:5rem;padding-right:1.5rem;padding-bottom:5rem;padding-left:1.5rem;max-width:900px;margin-left:auto;margin-right:auto">
 <!-- wp:html -->
+<!-- Hardcoded to /conair/ — this site is installed in that subdirectory, and
+     unlike patterns/*.php, block templates are pure markup with no PHP
+     execution, so home_url() isn't available here. -->
 <div class="text-center mb-6">
   <nav aria-label="Breadcrumb" class="text-sm" style="color:#9a9a9a;">
-    <a href="/" style="color:#9a9a9a;">Home</a>
+    <a href="/conair/" style="color:#9a9a9a;">Home</a>
     <span class="mx-2" aria-hidden="true">/</span>
-    <a href="/services/" style="color:#9a9a9a;">Services</a>
+    <a href="/conair/services/" style="color:#9a9a9a;">Services</a>
     <span class="mx-2" aria-hidden="true">/</span>
     <span style="color:#d4d4d4;" aria-current="page">Service</span>
   </nav>

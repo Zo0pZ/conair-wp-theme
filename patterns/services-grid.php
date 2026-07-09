@@ -24,7 +24,7 @@
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Specialist Grease Extract Cleaning</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">In line with NOS BSEV11 / BESA TR19 Grease &amp; NAADUK. Fully documented and self-certified on completion.</p>
         <p class="mt-3" style="font-size:12px;color:#00b4a2;font-weight:600;letter-spacing:0.05em;">NOS BSEV11 &bull; BESA TR19 &bull; NAADUK</p>
-        <a href="/services/grease-extract-cleaning/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/grease-extract-cleaning/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -34,7 +34,7 @@
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">General Ventilation Cleaning</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Extract &amp; supply duct cleaning in line with BESA TR19 internal cleanliness of ventilation systems.</p>
         <p class="mt-3" style="font-size:12px;color:#00b4a2;font-weight:600;letter-spacing:0.05em;">BESA TR19 Compliant</p>
-        <a href="/services/ventilation-cleaning/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/ventilation-cleaning/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -43,7 +43,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Tumble Dryer Extraction Cleaning</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Lint-blocked extraction systems are a major fire risk. We clean and clear tumble dryer ducting to keep your laundry appliances safe and efficient.</p>
-        <a href="/services/tumble-dryer-extraction-cleaning/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/tumble-dryer-extraction-cleaning/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -52,7 +52,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Pizza Flue Sweeping</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Specialist sweeping of pizza oven flues and chimneys. Reduces soot and grease build-up that can cause dangerous chimney fires.</p>
-        <a href="/services/pizza-flue-sweeping/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/pizza-flue-sweeping/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -62,7 +62,7 @@
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Access Door Supply &amp; Installation</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Including fire-rated access doors. We are an accredited FireMac approved installer, ensuring doors meet the highest fire safety standards.</p>
         <p class="mt-3" style="font-size:12px;color:#00b4a2;font-weight:600;letter-spacing:0.05em;">FireMac Approved Installer</p>
-        <a href="/services/access-door-installation/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/access-door-installation/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -71,7 +71,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Extractor Fan Replacements</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Supply and installation of commercial extractor fans. We assess, recommend, and fit the right unit for your kitchen or laundry setup.</p>
-        <a href="/services/extractor-fan-replacement/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/extractor-fan-replacement/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -80,7 +80,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Canopy Hood System Installations</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Full commercial canopy hood and extraction system installations designed and fitted to meet your kitchen layout and compliance requirements.</p>
-        <a href="/services/canopy-hood-installation/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/canopy-hood-installation/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -89,7 +89,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Filtered Mechanical Supply Air Systems</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Design and installation of filtered mechanical supply air systems, improving kitchen air quality, airflow balance, and working environment.</p>
-        <a href="/services/supply-air-systems/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/supply-air-systems/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -98,7 +98,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Ductwork Alterations &amp; Filter Supply</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Ductwork modifications and alterations to suit changing kitchen layouts. We also supply filters in all types and sizes for your existing system.</p>
-        <a href="/services/ductwork-alterations/" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/ductwork-alterations/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
     </div>
