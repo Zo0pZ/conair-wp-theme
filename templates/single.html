@@ -1,21 +1,29 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","attr":{"id":"main-content"},"style":{"spacing":{"padding":{"top":"100px"}}},"layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"main","anchor":"main-content","style":{"spacing":{"padding":{"top":"100px"}}}} -->
+<main id="main-content" class="wp-block-group" style="padding-top:100px">
 
 <!-- Post hero -->
-<!-- wp:group {"tagName":"section","className":"hero-bg grid-overlay","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","right":"1.5rem","left":"1.5rem"}}},"layout":{"type":"constrained","contentSize":"768px"}} -->
+<!-- wp:group {"tagName":"section","className":"hero-bg grid-overlay","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","right":"1.5rem","left":"1.5rem"}}}} -->
+<section class="wp-block-group hero-bg grid-overlay" style="padding-top:4rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
 <!-- wp:post-title {"level":1,"textAlign":"center","style":{"typography":{"fontWeight":"900","lineHeight":"1.08"},"spacing":{"margin":{"bottom":"1rem"}}},"textColor":"white","fontSize":"hero-heading"} /-->
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"},"style":{"spacing":{"blockGap":"1rem","margin":{"top":"1rem"}}}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"1rem","margin":{"top":"1rem"}}}} -->
+<div class="wp-block-group" style="margin-top:1rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem">
 <!-- wp:post-date {"format":"j F Y","style":{"typography":{"fontSize":"0.875rem"}},"textColor":"muted"} /-->
 <!-- wp:post-author {"showAvatar":false,"style":{"typography":{"fontSize":"0.875rem"}},"textColor":"muted"} /-->
+</div>
 <!-- /wp:group -->
+</section>
 <!-- /wp:group -->
 
 <!-- Post body -->
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","right":"1.5rem","left":"1.5rem"}}},"layout":{"type":"constrained","contentSize":"768px"}} -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","right":"1.5rem","left":"1.5rem"}}}} -->
+<div class="wp-block-group" style="padding-top:4rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
 <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+</div>
 <!-- /wp:group -->
 
+</main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

@@ -1,21 +1,27 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","attr":{"id":"main-content"},"style":{"spacing":{"padding":{"top":"100px"}}},"layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"main","anchor":"main-content","style":{"spacing":{"padding":{"top":"100px"}}}} -->
+<main id="main-content" class="wp-block-group" style="padding-top:100px">
 
 <!-- Page hero — uses the post title and optional excerpt -->
-<!-- wp:group {"tagName":"section","className":"hero-bg grid-overlay","style":{"spacing":{"padding":{"top":"5rem","bottom":"5rem","right":"1.5rem","left":"1.5rem"}}},"layout":{"type":"constrained","contentSize":"768px"}} -->
+<!-- wp:group {"tagName":"section","className":"hero-bg grid-overlay","style":{"spacing":{"padding":{"top":"5rem","bottom":"5rem","right":"1.5rem","left":"1.5rem"}}}} -->
+<section class="wp-block-group hero-bg grid-overlay" style="padding-top:5rem;padding-right:1.5rem;padding-bottom:5rem;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
 <!-- wp:post-title {"level":1,"textAlign":"center","style":{"typography":{"fontWeight":"900","lineHeight":"1.08","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"1.5rem"}}},"textColor":"white","fontSize":"hero-heading"} /-->
 <!-- wp:post-excerpt {"textAlign":"center","moreText":"","showMoreOnNewLine":false,"style":{"typography":{"fontSize":"1.125rem","lineHeight":"1.7"}},"textColor":"muted"} /-->
+</section>
 <!-- /wp:group -->
 
 <!-- Page body content -->
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","right":"1.5rem","left":"1.5rem"}}},"layout":{"type":"constrained","contentSize":"768px"}} -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem","right":"1.5rem","left":"1.5rem"}}}} -->
+<div class="wp-block-group" style="padding-top:4rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
 <!-- wp:post-content {"layout":{"type":"constrained","contentSize":"768px"}} /-->
+</div>
 <!-- /wp:group -->
 
 <!-- Inline quote CTA -->
 <!-- wp:pattern {"slug":"conair-theme/quote-form"} /-->
 
+</main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
