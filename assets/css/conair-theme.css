@@ -1,0 +1,570 @@
+/*
+ * ConAir Extract Solutions — Custom Theme Stylesheet
+ * All hand-crafted CSS extracted from the original static site.
+ * Utility classes (max-w-*, grid, flex, etc.) are provided by Tailwind CSS (loaded separately).
+ */
+
+/* ────────────────────────────────────────────────────────────────
+   1.  RESET & BASE
+   ──────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0c0c0c;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #ffffff;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   2.  ACCESSIBILITY
+   ──────────────────────────────────────────────────────────────── */
+
+/* WCAG 2.4.1 — Skip navigation */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 1rem;
+  z-index: 10000;
+  background: #00b4a2;
+  color: #0c0c0c;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* WCAG 2.4.7 / 2.4.11 — Global focus ring */
+:focus-visible {
+  outline: 3px solid #00b4a2;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  text-decoration: none;
+}
+
+/* WCAG 2.4.11 — Scroll margin so sticky nav never obscures focused anchors */
+[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Visually hidden (screen-reader only) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* WCAG 2.3.3 — Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   3.  LAYOUT HELPERS
+   ──────────────────────────────────────────────────────────────── */
+
+/* Subtle dot-grid on dark sections */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Hero section background (Unsplash placeholder — replace with Media Library image in WP) */
+.hero-bg {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(12, 12, 12, 0.96) 0%,
+      rgba(20, 20, 20, 0.88) 50%,
+      rgba(0, 100, 92, 0.12) 100%
+    ),
+    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center / cover no-repeat;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   4.  DESIGN TOKENS (utility classes)
+   ──────────────────────────────────────────────────────────────── */
+
+.sep {
+  width: 48px;
+  height: 3px;
+  background: #00b4a2;
+  border-radius: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 180, 162, 0.1);
+  border: 1px solid rgba(0, 180, 162, 0.35);
+  color: #00b4a2;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stat-num {
+  background: linear-gradient(135deg, #ffffff 30%, #00b4a2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   5.  NAVIGATION
+   ──────────────────────────────────────────────────────────────── */
+
+/* Logo sizing — stepped down at breakpoints */
+.logo-wrap img {
+  display: block;
+  width: auto;
+  max-height: 100px;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .logo-wrap img { max-height: 72px; }
+}
+
+@media (max-width: 640px) {
+  .logo-wrap img { max-height: 52px; }
+}
+
+@media (max-width: 420px) {
+  .logo-wrap img { max-height: 44px; }
+}
+
+/* Footer logo */
+.footer-logo {
+  display: block;
+  width: auto;
+  max-height: 50px;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .footer-logo { max-height: 32px; }
+}
+
+/* Contact links — uniform pill style for phone/mobile numbers */
+.contact-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.6rem;
+  background: #1c1c1c !important;
+  border: 1px solid #3a3a3a !important;
+  color: #d4d4d4 !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.contact-link svg {
+  color: #00b4a2 !important;
+}
+
+/* Mobile menu — animated max-height slide */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu.open {
+  max-height: 500px;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   6.  CARDS
+   ──────────────────────────────────────────────────────────────── */
+
+.glow-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.glow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 180, 162, 0.4);
+  border-color: rgba(0, 180, 162, 0.4) !important;
+}
+
+/* Check icon inside list items */
+.check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 180, 162, 0.15);
+}
+
+.check-icon svg {
+  width: 11px;
+  height: 11px;
+  color: #00b4a2;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   7.  BUTTONS
+   ──────────────────────────────────────────────────────────────── */
+
+.btn-teal {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.btn-teal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btn-teal:hover::before {
+  opacity: 1;
+}
+
+.btn-teal:hover {
+  box-shadow: 0 0 24px rgba(0, 180, 162, 0.4);
+}
+
+/* ────────────────────────────────────────────────────────────────
+   8.  FORM FIELDS
+   ──────────────────────────────────────────────────────────────── */
+
+/* #626262 border on #141414 bg = 3.02:1 contrast ratio ✓ */
+.field {
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #ffffff;
+  background: #1c1c1c;
+  border: 1.5px solid #626262;
+  outline: none;
+  min-height: 44px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.field::placeholder {
+  color: #7a7a7a;
+}
+
+.field:focus-visible {
+  outline: none;
+  border-color: #00b4a2;
+  box-shadow: 0 0 0 3px rgba(0, 180, 162, 0.35);
+}
+
+select.field {
+  color: #d4d4d4;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   9.  BEFORE / AFTER SLIDER
+   ──────────────────────────────────────────────────────────────── */
+
+.ba-container {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+  cursor: ew-resize;
+}
+
+.ba-after {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #00b4a2;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  background: #00b4a2;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(0, 180, 162, 0.25), 0 4px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ba-handle::before,
+.ba-handle::after {
+  content: '';
+  width: 0;
+  height: 0;
+}
+
+.ba-handle::before {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #0c0c0c;
+  margin-right: 3px;
+}
+
+.ba-handle::after {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid #0c0c0c;
+  margin-left: 3px;
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 14px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ba-label-before {
+  left: 14px;
+}
+
+/* #00b4a2 on near-black bg = 7.5:1 contrast ✓ */
+.ba-label-after {
+  right: 14px;
+  color: #00b4a2;
+  border-color: rgba(0, 180, 162, 0.5);
+}
+
+/* Placeholder images — replace with real Media Library images in WP */
+.before-img {
+  background:
+    linear-gradient(rgba(30, 20, 10, 0.5) 0%, rgba(0, 0, 0, 0.1) 50%),
+    url('https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=900&q=80') center / cover no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.after-img {
+  background:
+    linear-gradient(rgba(0, 30, 28, 0.35) 0%, rgba(0, 0, 0, 0.05) 50%),
+    url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80') center / cover no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   10. SCROLL REVEAL ANIMATION
+   ──────────────────────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   11. FAN LOGO ANIMATION
+   ──────────────────────────────────────────────────────────────── */
+
+/* (Above this line: all hand-crafted CSS. Below: WP block overrides.) */
+
+/* ────────────────────────────────────────────────────────────────
+   12. WORDPRESS NAVIGATION BLOCK — mobile overlay theming
+   ──────────────────────────────────────────────────────────────── */
+
+/* Strip WP's default white nav background */
+.wp-block-navigation {
+  --nav-foreground-color: #9a9a9a;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content {
+  color: #9a9a9a;
+  transition: color 0.15s;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content:hover,
+.wp-block-navigation .wp-block-navigation-item__content:focus {
+  color: #ffffff;
+}
+
+/* Hamburger / close icon button */
+.wp-block-navigation__responsive-container-open,
+.wp-block-navigation__responsive-container-close {
+  color: #ffffff !important;
+  background: #1c1c1c !important;
+  border: 1px solid #3a3a3a !important;
+  border-radius: 0.5rem !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Mobile overlay panel */
+.wp-block-navigation__responsive-container.is-menu-open {
+  background-color: #0f0f0f !important;
+  padding: 1.5rem 1rem !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+  align-items: flex-start !important;
+  padding-top: 0.75rem;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+  color: #9a9a9a !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.5rem !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Footer nav link styles */
+.footer-services-nav .wp-block-navigation-item__content,
+.footer-areas-nav .wp-block-navigation-item__content,
+.footer-legal-nav .wp-block-navigation-item__content {
+  color: #9a9a9a !important;
+  font-size: 0.875rem !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+}
+
+.footer-services-nav .wp-block-navigation-item__content:hover,
+.footer-areas-nav .wp-block-navigation-item__content:hover,
+.footer-legal-nav .wp-block-navigation-item__content:hover {
+  color: #ffffff !important;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   13. WORDPRESS SITE LOGO BLOCK
+   ──────────────────────────────────────────────────────────────── */
+
+.wp-block-site-logo img {
+  display: block;
+  width: auto;
+  max-height: 100px;
+  height: auto;
+}
+
+.wp-block-site-logo.footer-logo img {
+  max-height: 50px;
+}
+
+@media (max-width: 1024px) {
+  .wp-block-site-logo img { max-height: 72px; }
+}
+
+@media (max-width: 640px) {
+  .wp-block-site-logo img { max-height: 52px; }
+  .wp-block-site-logo.footer-logo img { max-height: 32px; }
+}
+
+@media (max-width: 420px) {
+  .wp-block-site-logo img { max-height: 44px; }
+}
+
+/* Sticky header override — WP uses position:sticky via block styles */
+.conair-site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  width: 100% !important;
+}
+
+/* Ensure main content is not hidden behind sticky nav */
+.wp-site-blocks > main,
+#main-content {
+  padding-top: 100px;
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.fan-spin {
+  animation: spin-slow 8s linear infinite;
+  transform-origin: center;
+}
+
+.logo-wrap:hover .fan-spin {
+  animation-duration: 1.5s;
+}
