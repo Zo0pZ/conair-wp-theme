@@ -451,9 +451,17 @@ select.field {
 
 /* WP core hides the mobile overlay by default until .is-menu-open is added,
    but the Tailwind CDN's Preflight reset (loaded after WP core CSS) overrides
-   that default, leaving the overlay permanently visible. Restore it explicitly. */
-.wp-block-navigation__responsive-container:not(.is-menu-open) {
-  display: none !important;
+   that default, leaving the overlay permanently visible. Restore it explicitly.
+   Scoped to mobile only — the desktop breakpoint below shows the container
+   unconditionally, and since :not(.is-menu-open) has higher specificity
+   (0,2,0) than a bare class selector (0,1,0), an unscoped version of this
+   rule would beat the desktop show rule at every width despite !important
+   on both and despite coming first in source order. Splitting by breakpoint
+   means the two rules never compete on specificity at all. */
+@media (max-width: 767.98px) {
+  .wp-block-navigation__responsive-container:not(.is-menu-open) {
+    display: none !important;
+  }
 }
 
 .wp-block-navigation .wp-block-navigation-item__content {
