@@ -70,54 +70,23 @@ function conair_enqueue_assets(): void {
 		null
 	);
 
-	// Tailwind CSS via CDN.
-	// NOTE: For production, replace with a compiled stylesheet generated via
-	// `npx tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify`
-	// and enqueue that file instead. The CDN approach is fine for development.
-	wp_enqueue_script(
-		'tailwindcss-cdn',
-		'https://cdn.tailwindcss.com',
-		[],
-		null,
-		false // must load in <head> so Tailwind can scan DOM before first paint
-	);
-
-	// Tailwind config — matches the original inline config from the static site
-	wp_add_inline_script(
-		'tailwindcss-cdn',
-		"tailwind.config = {
-			theme: {
-				extend: {
-					colors: {
-						ink: {
-							DEFAULT: '#0c0c0c',
-							900: '#0c0c0c',
-							800: '#141414',
-							700: '#1c1c1c',
-							600: '#242424'
-						},
-						teal: {
-							DEFAULT: '#00b4a2',
-							light: '#00ccb8',
-							dark: '#009688'
-						}
-					},
-					fontFamily: {
-						sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
-					},
-					minHeight: { tap: '44px' },
-					minWidth:  { tap: '44px' }
-				}
-			}
-		};",
-		'after'
+	// Compiled Tailwind utilities (built via `npm run build:css` — see package.json
+	// and tailwind.config.js). Preflight is disabled in tailwind.config.js since this
+	// is a WordPress theme, not a standalone page — WP core's own block-library CSS
+	// and conair-theme.css already provide the base styles, and a global reset here
+	// previously overrode WP core defaults (e.g. the nav block's default hidden state).
+	wp_enqueue_style(
+		'conair-tailwind',
+		get_template_directory_uri() . '/assets/css/tailwind.css',
+		[ 'conair-fonts' ],
+		CONAIR_VERSION
 	);
 
 	// Custom theme stylesheet (all hand-crafted CSS from the original <style> block)
 	wp_enqueue_style(
 		'conair-theme-style',
 		get_template_directory_uri() . '/assets/css/conair-theme.css',
-		[ 'conair-fonts' ],
+		[ 'conair-tailwind' ],
 		CONAIR_VERSION
 	);
 
@@ -145,9 +114,16 @@ function conair_enqueue_editor_assets(): void {
 	);
 
 	wp_enqueue_style(
+		'conair-tailwind-editor',
+		get_template_directory_uri() . '/assets/css/tailwind.css',
+		[],
+		CONAIR_VERSION
+	);
+
+	wp_enqueue_style(
 		'conair-theme-style-editor',
 		get_template_directory_uri() . '/assets/css/conair-theme.css',
-		[],
+		[ 'conair-tailwind-editor' ],
 		CONAIR_VERSION
 	);
 }
