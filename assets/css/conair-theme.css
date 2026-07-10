@@ -148,7 +148,15 @@ button:focus-visible {
   background-size: 48px 48px;
 }
 
-/* Hero section background (Unsplash placeholder — replace with Media Library image in WP) */
+/* Hero section background. The photo layer reads a CSS custom property so it
+   can be swapped from wp-admin (Customizer → Hero Section) without a code
+   deploy — see inc/customizer.php, which sets --hero-bg-image on :root via a
+   tiny inline <style> in wp_head(). Deliberately NOT declared on .hero-bg
+   itself — a var set directly on this element would always win over the
+   :root value it's meant to inherit, silently ignoring the Customizer.
+   The url() below is only the fallback for the (expected-unreachable) case
+   where wp_head's inline style didn't run. Gradient/sizing stay here as the
+   single source of truth for the visual design. */
 .hero-bg {
   background:
     linear-gradient(
@@ -157,7 +165,7 @@ button:focus-visible {
       rgba(20, 20, 20, 0.88) 50%,
       rgba(0, 100, 92, 0.12) 100%
     ),
-    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center / cover no-repeat;
+    var(--hero-bg-image, url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80')) center / cover no-repeat;
 }
 
 /* ────────────────────────────────────────────────────────────────
