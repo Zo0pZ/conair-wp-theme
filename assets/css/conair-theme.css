@@ -28,6 +28,44 @@ body {
   color: #ffffff;
 }
 
+/* No default underline anywhere — buttons, nav, and pill-style contact
+   links (.contact-link) stay clean; genuine inline text links get an
+   animated underline instead (below). */
+a {
+  text-decoration: none;
+}
+
+/* Animated underline for genuine inline text links only — i.e. links that
+   appear as part of a sentence (wp:paragraph → <p>) or inside real post
+   content (list items included). Buttons, nav/breadcrumb links, and the
+   card-style links generated in inc/seed-content.php are deliberately not
+   <p>-wrapped, so they're untouched by this without needing per-component
+   exclusion classes. .contact-link (pill-style phone links that sometimes
+   sit inline in a sentence) is excluded since it's a button, not prose. */
+p a:not(.contact-link),
+.wp-block-post-content li a:not(.contact-link) {
+  position: relative;
+}
+
+p a:not(.contact-link)::after,
+.wp-block-post-content li a:not(.contact-link)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+p a:not(.contact-link):hover::after,
+.wp-block-post-content li a:not(.contact-link):hover::after {
+  transform: scaleX(1);
+}
+
 /* ────────────────────────────────────────────────────────────────
    2.  ACCESSIBILITY
    ──────────────────────────────────────────────────────────────── */
