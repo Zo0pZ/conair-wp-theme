@@ -606,7 +606,12 @@ select.field {
   .wp-block-site-logo img { max-height: 44px; }
 }
 
-/* Sticky header override — WP uses position:sticky via block styles */
+/* Sticky header override — WP uses position:sticky via block styles.
+   Sticky must be applied to WP's auto-generated template-part wrapper
+   (header.wp-block-template-part), not the inner .conair-site-header —
+   a sticky element can't stick past its immediate parent's box, and that
+   wrapper's height exactly matches the header's, leaving no room to stick. */
+header.wp-block-template-part:has(.conair-site-header),
 .conair-site-header {
   position: sticky !important;
   top: 0 !important;
@@ -614,10 +619,9 @@ select.field {
   width: 100% !important;
 }
 
-/* Ensure main content is not hidden behind sticky nav */
 .wp-site-blocks > main,
 #main-content {
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
 
 @keyframes spin-slow {
