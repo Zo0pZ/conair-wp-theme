@@ -691,3 +691,152 @@ header.wp-block-template-part:has(.conair-site-header),
   display: inline;
   margin: 0 !important;
 }
+
+/* ────────────────────────────────────────────────────────────────
+   14. SERVICE PAGE BODY CONTENT (.conair-* classes)
+   ──────────────────────────────────────────────────────────────── */
+
+/* Three of the nine service pages (grease-extract-cleaning,
+   pizza-flue-sweeping, access-door-installation) have post_content —
+   which lives in the database per page, not in this repo, so there's
+   no template file to edit for this — authored against a class naming
+   scheme (conair-*) that was never connected to any CSS anywhere in
+   this theme, so it rendered as unstyled fallback text (the reported
+   "cramped, one-word-per-line" checklist). That content also
+   duplicates what page-service.html's own template chrome already
+   renders: a second hero title/subtitle/CTA, and a second "Ready to
+   Book?" CTA. Those duplicate blocks are hidden outright; the
+   checklist and FAQ content (which isn't duplicated anywhere) is
+   styled to match the card/badge treatment the other six service
+   pages already use. */
+
+.conair-hero-section,
+.conair-ready-section {
+  display: none;
+}
+
+.conair-content-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.conair-content-container {
+  max-width: 56rem; /* matches max-w-4xl on the other service pages' checklist sections */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.conair-intro-text {
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  color: #9ca3af;
+  line-height: 1.8;
+  max-width: 700px;
+}
+
+.conair-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.conair-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.conair-check-icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #00b4a2;
+}
+
+.conair-check-item p {
+  font-size: 15px;
+  color: #d4d4d4;
+  line-height: 1.7;
+}
+
+.conair-check-item strong {
+  color: #ffffff;
+}
+
+.conair-freq-note {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #7a7a7a;
+}
+
+.conair-faq-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: #0c0c0c;
+  border-top: 1px solid #1c1c1c;
+  text-align: center;
+}
+
+.conair-faq-container {
+  max-width: 48rem; /* matches max-w-3xl on the other service pages' FAQ sections */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.conair-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+  background: rgba(0, 180, 162, 0.1);
+  border: 1px solid rgba(0, 180, 162, 0.35);
+  color: #00b4a2;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.conair-section-h2 {
+  font-weight: 900;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+}
+
+.conair-faq-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.conair-faq-card {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: #141414;
+  border: 1px solid #2e2e2e;
+}
+
+.conair-faq-card h3 {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.conair-faq-card p {
+  font-size: 15px;
+  color: #9a9a9a;
+  line-height: 1.7;
+}
