@@ -619,11 +619,6 @@ header.wp-block-template-part:has(.conair-site-header),
   width: 100% !important;
 }
 
-.wp-site-blocks > main,
-#main-content {
-  /* padding-top: 100px; */
-}
-
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
 }
