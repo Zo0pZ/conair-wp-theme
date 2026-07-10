@@ -632,3 +632,17 @@ select.field {
 .logo-wrap:hover .fan-spin {
   animation-duration: 1.5s;
 }
+
+/* ────────────────────────────────────────────────────────────────
+   13. SERVICE PAGE TEMPLATE — inline breadcrumb current-page title
+   ──────────────────────────────────────────────────────────────── */
+
+/* The final breadcrumb crumb needs to be the actual page title, which
+   requires a real wp:post-title block (a raw wp:html block can't contain
+   dynamic post data) — but post-title always renders its own block-level
+   heading. This pulls that heading back onto the same line as the
+   breadcrumb nav immediately before it. */
+.breadcrumb-current {
+  display: inline;
+  margin: 0 !important;
+}

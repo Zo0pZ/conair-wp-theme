@@ -211,3 +211,69 @@ function conair_output_schema(): void {
 	echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
 }
 add_action( 'wp_head', 'conair_output_schema' );
+
+/**
+ * Output Service + BreadcrumbList JSON-LD for pages using the "Service Page"
+ * template. Needs the current post's title/excerpt/permalink, which a .html
+ * block template can't produce (no PHP execution there) — this is why it's
+ * a functions.php hook instead of markup in templates/page-service.html.
+ */
+function conair_output_service_schema(): void {
+	if ( ! is_page_template( 'page-service' ) ) {
+		return;
+	}
+
+	$post_id = get_queried_object_id();
+
+	$service_schema = [
+		'@context'    => 'https://schema.org',
+		'@type'       => 'Service',
+		'serviceType' => get_the_title( $post_id ),
+		'description' => get_the_excerpt( $post_id ),
+		'provider'    => [
+			'@type'     => 'LocalBusiness',
+			'name'      => 'ConAir Extract Solutions Limited',
+			'telephone' => '+441934528450',
+			'url'       => home_url( '/' ),
+			'address'   => [
+				'@type'           => 'PostalAddress',
+				'streetAddress'   => '2 Laurel House, 1 Station Road',
+				'addressLocality' => 'Weston-super-Mare',
+				'addressRegion'   => 'Somerset',
+				'postalCode'      => 'BS22 6AR',
+				'addressCountry'  => 'GB',
+			],
+		],
+		'areaServed'  => 'Bristol and Somerset, UK',
+	];
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $service_schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+
+	$breadcrumb_schema = [
+		'@context'        => 'https://schema.org',
+		'@type'           => 'BreadcrumbList',
+		'itemListElement' => [
+			[
+				'@type'    => 'ListItem',
+				'position' => 1,
+				'name'     => 'Home',
+				'item'     => home_url( '/' ),
+			],
+			[
+				'@type'    => 'ListItem',
+				'position' => 2,
+				'name'     => 'Services',
+				'item'     => home_url( '/services/' ),
+			],
+			[
+				'@type'    => 'ListItem',
+				'position' => 3,
+				'name'     => get_the_title( $post_id ),
+				'item'     => get_permalink( $post_id ),
+			],
+		],
+	];
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $breadcrumb_schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'conair_output_service_schema' );
