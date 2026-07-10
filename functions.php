@@ -9,6 +9,17 @@ define( 'CONAIR_VERSION', '1.0.0' );
 
 require_once get_template_directory() . '/inc/seed-content.php';
 
+/**
+ * Cache-busting version for a theme asset — the file's own mtime, so every
+ * edit forces browsers to fetch the new copy instead of reusing whatever
+ * they cached under the old (otherwise-static) CONAIR_VERSION query string.
+ */
+function conair_asset_version( string $relative_path ): string {
+	$path = get_template_directory() . $relative_path;
+	$mtime = file_exists( $path ) ? filemtime( $path ) : false;
+	return $mtime ? (string) $mtime : CONAIR_VERSION;
+}
+
 // ═══════════════════════════════════════════════════════════════
 //  1. THEME SETUP
 // ═══════════════════════════════════════════════════════════════
@@ -79,7 +90,7 @@ function conair_enqueue_assets(): void {
 		'conair-tailwind',
 		get_template_directory_uri() . '/assets/css/tailwind.css',
 		[ 'conair-fonts' ],
-		CONAIR_VERSION
+		conair_asset_version( '/assets/css/tailwind.css' )
 	);
 
 	// Custom theme stylesheet (all hand-crafted CSS from the original <style> block)
@@ -87,7 +98,7 @@ function conair_enqueue_assets(): void {
 		'conair-theme-style',
 		get_template_directory_uri() . '/assets/css/conair-theme.css',
 		[ 'conair-tailwind' ],
-		CONAIR_VERSION
+		conair_asset_version( '/assets/css/conair-theme.css' )
 	);
 
 	// Theme JavaScript — mobile menu, scroll reveal, before/after slider, quote form
@@ -95,7 +106,7 @@ function conair_enqueue_assets(): void {
 		'conair-theme-js',
 		get_template_directory_uri() . '/assets/js/conair-theme.js',
 		[],
-		CONAIR_VERSION,
+		conair_asset_version( '/assets/js/conair-theme.js' ),
 		true // load in footer
 	);
 }
@@ -117,14 +128,14 @@ function conair_enqueue_editor_assets(): void {
 		'conair-tailwind-editor',
 		get_template_directory_uri() . '/assets/css/tailwind.css',
 		[],
-		CONAIR_VERSION
+		conair_asset_version( '/assets/css/tailwind.css' )
 	);
 
 	wp_enqueue_style(
 		'conair-theme-style-editor',
 		get_template_directory_uri() . '/assets/css/conair-theme.css',
 		[ 'conair-tailwind-editor' ],
-		CONAIR_VERSION
+		conair_asset_version( '/assets/css/conair-theme.css' )
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'conair_enqueue_editor_assets' );
