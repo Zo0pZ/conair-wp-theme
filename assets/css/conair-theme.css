@@ -722,7 +722,10 @@ header.wp-block-template-part:has(.conair-site-header),
    pages already use. */
 
 .conair-hero-section,
-.conair-ready-section {
+/* Only the plain duplicate "Ready to Book?" CTA is hidden — some pages
+   (e.g. About) reuse this same class for a genuinely unique closing
+   section with its own blockquote, which has nothing to duplicate. */
+.conair-ready-section:not(:has(blockquote)) {
   display: none;
 }
 
@@ -825,8 +828,8 @@ header.wp-block-template-part:has(.conair-site-header),
 }
 
 .conair-faq-cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
   margin-top: 2.5rem;
   text-align: left;
@@ -850,4 +853,321 @@ header.wp-block-template-part:has(.conair-site-header),
   font-size: 15px;
   color: #9a9a9a;
   line-height: 1.7;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   15. ABOUT PAGE BODY CONTENT (.about-* classes)
+   ──────────────────────────────────────────────────────────────── */
+
+/* Same situation as section 14 — post_content for /about/ is authored
+   against its own class scheme (about-*, alongside some of the same
+   conair-* classes reused from the service pages) with no matching CSS
+   anywhere in the theme. Styled here rather than in post_content since
+   that lives in the database, not this repo. */
+
+.about-stats-bar {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.about-stats-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 6rem;
+}
+
+.about-stat-num {
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1;
+  color: #00b4a2;
+}
+
+.about-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9a9a9a;
+  text-align: center;
+}
+
+.about-stat-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: #242424;
+}
+
+@media (max-width: 640px) {
+  .about-stat-divider {
+    display: none;
+  }
+}
+
+.about-section-h2 {
+  font-weight: 900;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.about-section-intro {
+  font-size: 1rem;
+  color: #9a9a9a;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* Our Story — two-column on desktop: story copy + a sectors-served aside card */
+.about-story-container {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-story-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-story-text .about-section-h2 {
+  margin-top: 0.5rem;
+}
+
+.about-aside-card {
+  border-radius: 1rem;
+  padding: 1.75rem;
+  background: #141414;
+  border: 1px solid #2e2e2e;
+}
+
+.about-aside-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-aside-card h3 {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-sectors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-sectors-list li {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #858585;
+  background: #1c1c1c;
+  border: 1px solid #3a3a3a;
+  border-radius: 0.375rem;
+  padding: 0.4rem 0.7rem;
+}
+
+/* Accreditations grid — 3 columns desktop, 2 tablet, 1 mobile */
+.about-creds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-creds-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-creds-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-cred-card {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: #141414;
+  border: 1px solid #2e2e2e;
+  text-align: left;
+}
+
+.about-cred-badge {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  background: rgba(0, 180, 162, 0.1);
+  border: 1px solid rgba(0, 180, 162, 0.35);
+  color: #00b4a2;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.about-cred-card h3 {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.about-cred-card p {
+  font-size: 14px;
+  color: #9a9a9a;
+  line-height: 1.65;
+}
+
+/* Health & Safety — 2x2 grid, icon-left check items with a circular badge */
+.about-hs-container {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.about-hs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .about-hs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-hs-grid .conair-check-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 180, 162, 0.15);
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+/* Closing quote CTA — the About page's own version of .conair-ready-section
+   has a unique blockquote (see the :not(:has(blockquote)) exception in
+   section 14), so unlike the service pages it renders and needs styling. */
+.conair-ready-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+  background: #0c0c0c;
+  border-top: 1px solid #1c1c1c;
+}
+
+.conair-ready-container {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.conair-ready-h2 {
+  font-weight: 900;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 1.25rem;
+}
+
+.conair-ready-quote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #00b4a2;
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.conair-ready-text {
+  font-size: 15px;
+  color: #9a9a9a;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.conair-ready-text a {
+  color: #00b4a2;
+  font-weight: 600;
+}
+
+.conair-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.conair-btn-teal,
+.conair-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  min-height: 44px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.conair-btn-teal {
+  background: #00b4a2;
+  color: #0c0c0c;
+}
+
+.conair-btn-teal:hover {
+  background: #00ccb8;
+}
+
+.conair-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid #3a3a3a;
+}
+
+.conair-btn-outline:hover {
+  border-color: #00b4a2;
+  color: #00b4a2;
 }
