@@ -187,6 +187,20 @@ button:focus-visible {
     var(--service-hero-image) center / cover no-repeat !important;
 }
 
+/* Area page hero — identical treatment to .has-service-hero-image above,
+   scoped to page-area's .area-hero/--area-hero-image instead so an area
+   page's Featured Image never leaks onto a service page or vice versa. */
+.has-area-hero-image .area-hero {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(12, 12, 12, 0.96) 0%,
+      rgba(20, 20, 20, 0.88) 50%,
+      rgba(0, 100, 92, 0.12) 100%
+    ),
+    var(--area-hero-image) center / cover no-repeat !important;
+}
+
 /* ────────────────────────────────────────────────────────────────
    4.  DESIGN TOKENS (utility classes)
    ──────────────────────────────────────────────────────────────── */

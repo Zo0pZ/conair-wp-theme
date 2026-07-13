@@ -1,33 +1,57 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","anchor":"main-content"} -->
-<main id="main-content" class="wp-block-group">
-
-<!-- Area hero -->
-<!-- wp:group {"tagName":"section","className":"hero-bg grid-overlay","style":{"spacing":{"padding":{"top":"5rem","bottom":"5rem","right":"1.5rem","left":"1.5rem"}}}} -->
-<section class="wp-block-group hero-bg grid-overlay" style="padding-top:5rem;padding-right:1.5rem;padding-bottom:5rem;padding-left:1.5rem;max-width:900px;margin-left:auto;margin-right:auto">
+<!-- Breadcrumb bar — a sibling between the header and <main>, not nested
+     inside it, so it reads as a proper breadcrumb strip under the header
+     rather than as page content. Left-aligned. Mirrors page-service.html. -->
+<!-- wp:group {"tagName":"div","style":{"color":{"background":"#0c0c0c"},"spacing":{"padding":{"top":"1.25rem","bottom":"0","right":"1.5rem","left":"1.5rem"}}}} -->
+<div class="wp-block-group" style="background-color:#0c0c0c;padding-top:1.25rem;padding-right:1.5rem;padding-bottom:0;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
 <!-- wp:html -->
 <!-- Hardcoded to /conair/ — this site is installed in that subdirectory, and
      unlike patterns/*.php, block templates are pure markup with no PHP
-     execution, so home_url() isn't available here. -->
-<div class="text-center mb-6">
-  <nav aria-label="Breadcrumb" class="text-sm" style="color:#9a9a9a;">
-    <a href="/conair/" style="color:#9a9a9a;">Home</a>
-    <span class="mx-2" aria-hidden="true">/</span>
-    <a href="/conair/areas/" style="color:#9a9a9a;">Service Areas</a>
-    <span class="mx-2" aria-hidden="true">/</span>
-    <span style="color:#d4d4d4;" aria-current="page">Area</span>
-  </nav>
-</div>
+     execution, so home_url() isn't available here. The <nav> tag opens
+     here and only closes in the wp:html block below, with the
+     wp:post-title block for the current-page crumb placed between them —
+     block output is just concatenated in sequence, so this nests the
+     dynamic post-title INSIDE the nav rather than after it, which is
+     what actually lets .breadcrumb-current's display:inline (see
+     conair-theme.css) put it on the same line as "Home › Service Areas ›"
+     instead of wrapping to a line of its own. -->
+<nav aria-label="Breadcrumb" class="text-sm" style="color:#7a7a7a;font-size:13px;">
+  <a href="/conair/" class="hover:text-white transition-colors" style="color:#7a7a7a;">Home</a>
+  <span class="mx-1" aria-hidden="true">&rsaquo;</span>
+  <a href="/conair/areas/" class="hover:text-white transition-colors" style="color:#7a7a7a;">Service Areas</a>
+  <span class="mx-1" aria-hidden="true">&rsaquo;</span>
 <!-- /wp:html -->
+<!-- wp:post-title {"level":3,"isLink":false,"className":"breadcrumb-current","style":{"typography":{"fontSize":"13px","fontWeight":"400"}},"textColor":"muted"} /-->
 <!-- wp:html -->
-<div class="text-center mb-5"><span class="badge">Coverage</span></div>
+</nav>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","anchor":"main-content"} -->
+<main id="main-content" class="wp-block-group">
+
+<!-- Area hero with post title + excerpt. "area-hero" is only ever painted
+     with a photo background when the body carries has-area-hero-image
+     (added in functions.php when the page has a Featured Image set) —
+     see conair-theme.css. The section itself is full-bleed (so a set
+     image spans the viewport like the homepage hero); the inner group
+     constrains and centers the text content. Mirrors page-service.html's
+     service-hero. -->
+<!-- wp:group {"tagName":"section","className":"area-hero","style":{"color":{"background":"#0c0c0c"},"spacing":{"padding":{"top":"2rem","bottom":"4rem"}}}} -->
+<section class="wp-block-group area-hero" style="background-color:#0c0c0c;padding-top:2rem;padding-bottom:4rem">
+
+<!-- wp:group {"tagName":"div","className":"text-center","style":{"spacing":{"padding":{"right":"1.5rem","left":"1.5rem"}}}} -->
+<div class="wp-block-group text-center" style="padding-right:1.5rem;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
+<!-- wp:html -->
+<div class="mt-4 mb-5"><span class="badge">Coverage</span></div>
 <!-- /wp:html -->
 <!-- wp:post-title {"level":1,"textAlign":"center","style":{"typography":{"fontWeight":"900","lineHeight":"1.08","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"1.5rem"}}},"textColor":"white","fontSize":"hero-heading"} /-->
 <!-- wp:post-excerpt {"textAlign":"center","moreText":"","showMoreOnNewLine":false,"style":{"typography":{"fontSize":"1.1rem","lineHeight":"1.7"}},"textColor":"muted"} /-->
 <!-- wp:html -->
 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-  <a href="#quote" class="btn-teal w-full sm:w-auto inline-flex items-center justify-center gap-2.5 font-bold px-8 py-4 rounded-xl min-h-tap" style="font-size:1rem;background:#00b4a2;color:#0c0c0c;">
+  <a href="/conair/#quote" class="btn-teal w-full sm:w-auto inline-flex items-center justify-center gap-2.5 font-bold px-8 py-4 rounded-xl min-h-tap" style="font-size:1rem;background:#00b4a2;color:#0c0c0c;">
     Get a Quote
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
   </a>
@@ -37,6 +61,9 @@
   </a>
 </div>
 <!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+
 </section>
 <!-- /wp:group -->
 

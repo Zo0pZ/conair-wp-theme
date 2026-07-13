@@ -373,3 +373,42 @@ function conair_fix_service_page_excerpt( string $excerpt, $post ): string {
 	return wp_trim_words( wp_strip_all_tags( $content ), $excerpt_length, $excerpt_more );
 }
 add_filter( 'get_the_excerpt', 'conair_fix_service_page_excerpt', 20, 2 );
+
+// ═══════════════════════════════════════════════════════════════
+//  9. AREA PAGE HERO — optional per-page featured image
+// ═══════════════════════════════════════════════════════════════
+
+/**
+ * Same mechanism as conair_service_hero_body_class() above, scoped to the
+ * page-area template instead — kept as its own pair of functions (rather
+ * than generalised across both templates) so an area page's photo can
+ * never leak onto a service page or vice versa.
+ */
+function conair_area_hero_body_class( array $classes ): array {
+	if ( is_page_template( 'page-area' ) && has_post_thumbnail( get_queried_object_id() ) ) {
+		$classes[] = 'has-area-hero-image';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'conair_area_hero_body_class' );
+
+/**
+ * Same mechanism as conair_output_service_hero_image() above, scoped to
+ * the page-area template instead.
+ */
+function conair_output_area_hero_image(): void {
+	if ( ! is_page_template( 'page-area' ) ) {
+		return;
+	}
+
+	$image_url = get_the_post_thumbnail_url( get_queried_object_id(), 'full' );
+	if ( ! $image_url ) {
+		return;
+	}
+
+	printf(
+		'<style>:root{--area-hero-image:url("%s");}</style>',
+		esc_url_raw( $image_url )
+	);
+}
+add_action( 'wp_head', 'conair_output_area_hero_image' );
