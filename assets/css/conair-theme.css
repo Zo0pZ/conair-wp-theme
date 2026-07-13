@@ -168,6 +168,25 @@ button:focus-visible {
     var(--hero-bg-image, url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80')) center / cover no-repeat;
 }
 
+/* Service page hero — optional per-page Featured Image, styled to match
+   .hero-bg above (same gradient) rather than sharing the site-wide
+   --hero-bg-image var, since each service page needs its own photo.
+   functions.php only adds .has-service-hero-image to <body> and sets
+   --service-hero-image when the current service page actually has a
+   Featured Image, so pages without one keep the plain #0c0c0c hero
+   (inline style on .service-hero) — hence !important here to win over
+   that inline background-color. */
+.has-service-hero-image .service-hero {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(12, 12, 12, 0.96) 0%,
+      rgba(20, 20, 20, 0.88) 50%,
+      rgba(0, 100, 92, 0.12) 100%
+    ),
+    var(--service-hero-image) center / cover no-repeat !important;
+}
+
 /* ────────────────────────────────────────────────────────────────
    4.  DESIGN TOKENS (utility classes)
    ──────────────────────────────────────────────────────────────── */

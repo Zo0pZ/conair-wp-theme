@@ -289,3 +289,44 @@ function conair_output_service_schema(): void {
 	echo '<script type="application/ld+json">' . wp_json_encode( $breadcrumb_schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) . '</script>' . "\n";
 }
 add_action( 'wp_head', 'conair_output_service_schema' );
+
+// ═══════════════════════════════════════════════════════════════
+//  7. SERVICE PAGE HERO — optional per-page featured image
+// ═══════════════════════════════════════════════════════════════
+
+/**
+ * Add a body class when the current service page has a Featured Image set,
+ * so conair-theme.css can opt that page's hero into the homepage's photo
+ * background treatment instead of the plain dark hero. Off by default —
+ * a service page with no Featured Image keeps today's look untouched.
+ */
+function conair_service_hero_body_class( array $classes ): array {
+	if ( is_page_template( 'page-service' ) && has_post_thumbnail( get_queried_object_id() ) ) {
+		$classes[] = 'has-service-hero-image';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'conair_service_hero_body_class' );
+
+/**
+ * Expose the current service page's Featured Image as a CSS custom
+ * property — the same technique inc/customizer.php uses for the homepage
+ * hero (see that file's comment for why the CSS rule must read a var
+ * rather than have the image declared directly on the rule's selector).
+ */
+function conair_output_service_hero_image(): void {
+	if ( ! is_page_template( 'page-service' ) ) {
+		return;
+	}
+
+	$image_url = get_the_post_thumbnail_url( get_queried_object_id(), 'full' );
+	if ( ! $image_url ) {
+		return;
+	}
+
+	printf(
+		'<style>:root{--service-hero-image:url("%s");}</style>',
+		esc_url_raw( $image_url )
+	);
+}
+add_action( 'wp_head', 'conair_output_service_hero_image' );

@@ -21,9 +21,18 @@
 </div>
 <!-- /wp:group -->
 
-<!-- Service hero with post title + excerpt -->
-<!-- wp:group {"tagName":"section","style":{"color":{"background":"#0c0c0c"},"spacing":{"padding":{"top":"2rem","bottom":"4rem","right":"1.5rem","left":"1.5rem"}}}} -->
-<section class="wp-block-group text-center" style="background-color:#0c0c0c;padding-top:2rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
+<!-- Service hero with post title + excerpt. "service-hero" is only ever
+     painted with a photo background when the body carries
+     has-service-hero-image (added in functions.php when the page has a
+     Featured Image set) — see conair-theme.css. The section itself is
+     full-bleed (so a set image spans the viewport like the homepage
+     hero); the inner group constrains and centers the text content,
+     mirroring how patterns/hero.php separates the two. -->
+<!-- wp:group {"tagName":"section","className":"service-hero","style":{"color":{"background":"#0c0c0c"},"spacing":{"padding":{"top":"2rem","bottom":"4rem"}}}} -->
+<section class="wp-block-group service-hero" style="background-color:#0c0c0c;padding-top:2rem;padding-bottom:4rem">
+
+<!-- wp:group {"tagName":"div","className":"text-center","style":{"spacing":{"padding":{"right":"1.5rem","left":"1.5rem"}}}} -->
+<div class="wp-block-group text-center" style="padding-right:1.5rem;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
 <!-- wp:html -->
 <div class="mt-4 mb-5"><span class="badge">Our Services</span></div>
 <!-- /wp:html -->
@@ -41,6 +50,9 @@
   </a>
 </div>
 <!-- /wp:html -->
+</div>
+<!-- /wp:group -->
+
 </section>
 <!-- /wp:group -->
 
