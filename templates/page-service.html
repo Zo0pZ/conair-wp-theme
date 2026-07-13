@@ -8,15 +8,24 @@
 <!-- wp:html -->
 <!-- Hardcoded to /conair/ — this site is installed in that subdirectory, and
      unlike patterns/*.php, block templates are pure markup with no PHP
-     execution, so home_url() isn't available here. -->
+     execution, so home_url() isn't available here. The <nav> tag opens
+     here and only closes in the wp:html block below, with the
+     wp:post-title block for the current-page crumb placed between them —
+     block output is just concatenated in sequence, so this nests the
+     dynamic post-title INSIDE the nav rather than after it, which is
+     what actually lets .breadcrumb-current's display:inline (see
+     conair-theme.css) put it on the same line as "Home › Services ›"
+     instead of wrapping to a line of its own. -->
 <nav aria-label="Breadcrumb" class="text-sm" style="color:#7a7a7a;font-size:13px;">
   <a href="/conair/" class="hover:text-white transition-colors" style="color:#7a7a7a;">Home</a>
   <span class="mx-1" aria-hidden="true">&rsaquo;</span>
   <a href="/conair/services/" class="hover:text-white transition-colors" style="color:#7a7a7a;">Services</a>
   <span class="mx-1" aria-hidden="true">&rsaquo;</span>
-</nav>
 <!-- /wp:html -->
 <!-- wp:post-title {"level":3,"isLink":false,"className":"breadcrumb-current","style":{"typography":{"fontSize":"13px","fontWeight":"400"}},"textColor":"muted"} /-->
+<!-- wp:html -->
+</nav>
+<!-- /wp:html -->
 </div>
 <!-- /wp:group -->
 
