@@ -1,9 +1,8 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","anchor":"main-content"} -->
-<main id="main-content" class="wp-block-group">
-
-<!-- Breadcrumb bar — sits directly under the sticky header, left-aligned -->
+<!-- Breadcrumb bar — a sibling between the header and <main>, not nested
+     inside it, so it reads as a proper breadcrumb strip under the header
+     rather than as page content. Left-aligned. -->
 <!-- wp:group {"tagName":"div","style":{"color":{"background":"#0c0c0c"},"spacing":{"padding":{"top":"1.25rem","bottom":"0","right":"1.5rem","left":"1.5rem"}}}} -->
 <div class="wp-block-group" style="background-color:#0c0c0c;padding-top:1.25rem;padding-right:1.5rem;padding-bottom:0;padding-left:1.5rem;max-width:768px;margin-left:auto;margin-right:auto">
 <!-- wp:html -->
@@ -20,6 +19,9 @@
 <!-- wp:post-title {"level":3,"isLink":false,"className":"breadcrumb-current","style":{"typography":{"fontSize":"13px","fontWeight":"400"}},"textColor":"muted"} /-->
 </div>
 <!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","anchor":"main-content"} -->
+<main id="main-content" class="wp-block-group">
 
 <!-- Service hero with post title + excerpt. "service-hero" is only ever
      painted with a photo background when the body carries
