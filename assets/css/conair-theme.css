@@ -675,21 +675,27 @@ select.field {
    Sticky must be applied to WP's auto-generated template-part wrapper
    (header.wp-block-template-part), not the inner .conair-site-header —
    a sticky element can't stick past its immediate parent's box, and that
-   wrapper's height exactly matches the header's, leaving no room to stick. */
-header.wp-block-template-part:has(.conair-site-header),
-/* The width/padding rules below cap the header's content row at 1152px
-   (matching max-w-6xl used elsewhere on the site) while keeping the
-   header's own background/border-bottom full-bleed. The live header
-   markup applies padding directly on .conair-site-header (its inner
-   max-w-6xl/mx-auto wrapper from parts/header.html isn't actually
-   present in the rendered page — this template part has drifted from
-   the repo), so the constraint is done as calculated side padding
-   rather than a max-width + margin:auto wrapper, and !important is
-   needed to beat that inline padding. */
-.conair-site-header {
+   wrapper's height exactly matches the header's, leaving no room to stick.
+   Kept as its own rule (not combined with .conair-site-header below) —
+   an earlier version shared one declaration block across both selectors,
+   which applied the same side padding twice (wrapper AND header), each
+   inset by the full calc() amount, over-indenting the logo/nav row. */
+header.wp-block-template-part:has(.conair-site-header) {
   position: sticky !important;
   top: 0 !important;
   z-index: 50 !important;
+}
+
+/* Caps the header's content row (logo + nav) at 1152px, matching max-w-6xl
+   used elsewhere on the site, while .conair-site-header's own
+   background-color/border-bottom stay full-bleed — only its padding is
+   constrained, not its width. The live header markup applies padding
+   directly on .conair-site-header (its inner max-w-6xl/mx-auto wrapper
+   from parts/header.html isn't actually present in the rendered page —
+   this template part has drifted from the repo), so the constraint is
+   done as calculated side padding rather than a max-width + margin:auto
+   wrapper, and !important is needed to beat that inline padding. */
+.conair-site-header {
   width: 100% !important;
   padding-left: max(1.5rem, calc((100% - 1152px) / 2)) !important;
   padding-right: max(1.5rem, calc((100% - 1152px) / 2)) !important;
