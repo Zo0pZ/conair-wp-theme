@@ -330,3 +330,46 @@ function conair_output_service_hero_image(): void {
 	);
 }
 add_action( 'wp_head', 'conair_output_service_hero_image' );
+
+// ═══════════════════════════════════════════════════════════════
+//  8. SERVICE PAGE EXCERPT — strip the duplicate hidden hero out
+// ═══════════════════════════════════════════════════════════════
+
+/**
+ * Some service pages still carry legacy post_content from before
+ * page-service.html grew its own hero — a duplicate, CSS-hidden copy of
+ * the badge/title/subtitle/CTA buttons at the very top of the body (see
+ * conair-theme.css section 14, the ".conair-*" classes). With no manual
+ * excerpt set, WordPress's default excerpt is just strip_tags() +
+ * word-trim of that raw post_content, so it picks up the hidden
+ * duplicate's text verbatim ("OUR SERVICES Commercial Grease Extract
+ * Cleaning ... Contact Us Call 01934 528 450 ...") instead of a real
+ * description. That duplicate's own subtitle (.conair-page-subtitle) is
+ * exactly the short description these pages need, so pull it out
+ * directly when present instead of re-trimming the whole body. Falls
+ * back to a cleaned generic trim (hero section stripped first) for any
+ * page where that class isn't found. A manually set excerpt in the
+ * editor always wins — this only fires when post_excerpt is empty.
+ */
+function conair_fix_service_page_excerpt( string $excerpt, $post ): string {
+	if ( ! is_page_template( 'page-service' ) || '' !== $post->post_excerpt ) {
+		return $excerpt;
+	}
+
+	$content = apply_filters( 'the_content', get_the_content( '', false, $post ) );
+
+	if ( preg_match( '#<p class="conair-page-subtitle">(.*?)</p>#s', $content, $matches ) ) {
+		return trim( wp_strip_all_tags( $matches[1] ) );
+	}
+
+	$content = preg_replace( '#<section class="conair-hero-section".*?</section>#s', '', $content, 1 );
+	if ( null === $content || '' === trim( wp_strip_all_tags( $content ) ) ) {
+		return $excerpt;
+	}
+
+	$excerpt_length = apply_filters( 'excerpt_length', 55 );
+	$excerpt_more   = apply_filters( 'excerpt_more', ' [&hellip;]' );
+
+	return wp_trim_words( wp_strip_all_tags( $content ), $excerpt_length, $excerpt_more );
+}
+add_filter( 'get_the_excerpt', 'conair_fix_service_page_excerpt', 20, 2 );
