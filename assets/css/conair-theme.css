@@ -835,7 +835,7 @@ header.wp-block-template-part:has(.conair-site-header) {
 }
 
 .conair-faq-container {
-  max-width: 48rem; /* matches max-w-3xl on the other service pages' FAQ sections */
+  max-width: 1100px; /* was 48rem to match max-w-3xl on service pages' FAQ sections — widened per request, no longer matches those */
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -916,7 +916,7 @@ header.wp-block-template-part:has(.conair-site-header) {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  max-width: 56rem;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -978,7 +978,7 @@ header.wp-block-template-part:has(.conair-site-header) {
   grid-template-columns: 1.6fr 1fr;
   gap: 3rem;
   align-items: start;
-  max-width: 64rem;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -1091,7 +1091,7 @@ header.wp-block-template-part:has(.conair-site-header) {
 
 /* Health & Safety — 2x2 grid, icon-left check items with a circular badge */
 .about-hs-container {
-  max-width: 56rem;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
