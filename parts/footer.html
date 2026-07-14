@@ -11,8 +11,8 @@
 <!-- wp:columns {"style":{"spacing":{"blockGap":"2.5rem","padding":{"bottom":"2.5rem"}}}} -->
 <div class="wp-block-columns" style="gap:2.5rem;padding-bottom:2.5rem">
 
-<!-- wp:column {"width":"38%","metadata":{"name":"Brand & NAP"}} -->
-<div class="wp-block-column" style="flex-basis:38%">
+<!-- wp:column {"width":"32%","metadata":{"name":"Contact"}} -->
+<div class="wp-block-column" style="flex-basis:32%">
 <!-- wp:site-logo {"width":50,"shouldSyncIcon":false,"isLink":true,"className":"footer-logo"} /-->
 <!-- wp:html -->
 <address class="not-italic text-sm mt-5 space-y-3" itemscope itemtype="https://schema.org/LocalBusiness">
@@ -30,11 +30,9 @@
         <span itemprop="addressRegion">Somerset</span>, <span itemprop="postalCode">BS22 6AR</span><br/>
         <span itemprop="addressCountry">United Kingdom</span>
       </span>
-      <span class="block mt-3" style="font-size:0.8rem;color:#9ca3af;">Company Registration No. 07732929</span>
-      <span class="block" style="font-size:0.8rem;color:#9ca3af;">VAT No. 393472861</span>
     </div>
   </div>
-  <div class="flex flex-col gap-1.5">
+  <div class="flex flex-col gap-1.5 mt-1">
     <a href="tel:+441934528450" itemprop="telephone" class="font-semibold underline-offset-2 hover:underline min-h-tap inline-flex items-center gap-2 contact-link" style="color:#ffffff;">
       <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#00b4a2;" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
       01934 528 450
@@ -47,6 +45,17 @@
       info@conair-extractsolutions.co.uk
     </a>
   </div>
+  <div class="footer-social mt-6">
+    <p style="font-size:0.85rem;color:#9ca3af;margin-bottom:0.5rem;">To keep up to date with our latest projects.</p>
+    <div style="display:flex;gap:0.75rem;align-items:center;">
+      <a href="https://www.facebook.com/conair.extractdeepcleaning/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:0.5rem;background:rgba(255,255,255,0.06);color:#00b4a2;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a href="https://uk.linkedin.com/in/james-conway-b04131b9" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:0.5rem;background:rgba(255,255,255,0.06);color:#00b4a2;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
+  </div>
 </address>
 <!-- /wp:html -->
 </div>
@@ -54,8 +63,8 @@
 
 <!-- wp:column {"metadata":{"name":"Services"}} -->
 <div class="wp-block-column">
-<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted"} -->
-<h3 class="wp-block-heading has-muted-color has-text-color" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Services</h3>
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted","className":"footer-col-heading"} -->
+<h3 class="wp-block-heading footer-col-heading has-muted-color has-text-color" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:0.5rem;border-bottom:2px solid #00b4a2;display:inline-block;margin-bottom:1rem;">Services</h3>
 <!-- /wp:heading -->
 <!-- Links below are hardcoded to /conair/ since this site is installed in that
      subdirectory. Unlike patterns/*.php (which WordPress includes as real PHP,
@@ -78,30 +87,38 @@
 </div>
 <!-- /wp:column -->
 
-<!-- wp:column {"metadata":{"name":"Areas & Accreditations"}} -->
+<!-- wp:column {"metadata":{"name":"Service Areas"}} -->
 <div class="wp-block-column">
-<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted"} -->
-<h3 class="wp-block-heading has-muted-color has-text-color" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Service Areas</h3>
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted","className":"footer-col-heading"} -->
+<h3 class="wp-block-heading footer-col-heading has-muted-color has-text-color" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:0.5rem;border-bottom:2px solid #00b4a2;display:inline-block;margin-bottom:1rem;">Service Areas</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<ul class="flex flex-col gap-2 list-none p-0 m-0 mb-8 text-sm" style="color:#9a9a9a;">
+<ul class="flex flex-col gap-2 list-none p-0 m-0 text-sm" style="color:#9a9a9a;">
   <li><a href="/conair/areas/bristol/" class="hover:text-white transition-colors">Bristol &amp; surrounds</a></li>
   <li><a href="/conair/areas/weston-super-mare/" class="hover:text-white transition-colors">Weston-super-Mare</a></li>
   <li><a href="/conair/areas/taunton-bridgwater/" class="hover:text-white transition-colors">Bridgwater &amp; Taunton</a></li>
   <li><a href="/conair/areas/clevedon-nailsea-burnham/" class="hover:text-white transition-colors">Clevedon, Nailsea &amp; Burnham</a></li>
 </ul>
 <!-- /wp:html -->
-<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted"} -->
-<h3 class="wp-block-heading has-muted-color has-text-color" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Accreditations</h3>
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column {"metadata":{"name":"Accreditations"}} -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"11px","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"}},"textColor":"muted","className":"footer-col-heading"} -->
+<h3 class="wp-block-heading footer-col-heading has-muted-color has-text-color" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:0.5rem;border-bottom:2px solid #00b4a2;display:inline-block;margin-bottom:1rem;">Accreditations</h3>
 <!-- /wp:heading -->
 <!-- wp:html -->
-<ul class="flex flex-wrap gap-2 list-none p-0 m-0 mt-4">
+<ul class="flex flex-wrap gap-2 list-none p-0 m-0">
   <li class="font-bold px-2.5 py-1.5 rounded-md tracking-wide" style="font-size:11px;background:#1c1c1c;color:#858585;border:1px solid #3a3a3a;">NOS BSEV11</li>
   <li class="font-bold px-2.5 py-1.5 rounded-md tracking-wide" style="font-size:11px;background:#1c1c1c;color:#858585;border:1px solid #3a3a3a;">BESA TR19</li>
   <li class="font-bold px-2.5 py-1.5 rounded-md tracking-wide" style="font-size:11px;background:#1c1c1c;color:#858585;border:1px solid #3a3a3a;">NAADUK</li>
   <li class="font-bold px-2.5 py-1.5 rounded-md tracking-wide" style="font-size:11px;background:#1c1c1c;color:#858585;border:1px solid #3a3a3a;">FireMac</li>
   <li class="font-bold px-2.5 py-1.5 rounded-md tracking-wide" style="font-size:11px;background:#1c1c1c;color:#858585;border:1px solid #3a3a3a;">&#163;5M Insured</li>
 </ul>
+<div class="footer-naaduk-logo" style="margin-top:1.25rem;">
+  <img src="https://bencoetzee.co.uk/conair/wp-content/uploads/2026/07/naaduk-logo.jpg" alt="National Association of Air Duct Specialists UK (NAADUK)" style="max-width:200px;height:auto;background:#ffffff;padding:8px;border-radius:6px;" />
+</div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:column -->
@@ -112,15 +129,16 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"border":{"top":{"color":"#1c1c1c","width":"1px"}},"spacing":{"padding":{"top":"1.25rem"}}}} -->
-<div class="wp-block-group" style="border-top-color:#1c1c1c;border-top-width:1px;border-top-style:solid;padding-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center">
+<!-- wp:group {"style":{"border":{"top":{"color":"#1c1c1c","width":"1px"}},"spacing":{"padding":{"top":"1.25rem","bottom":"1.5rem"}}}} -->
+<div class="wp-block-group" style="border-top-color:#1c1c1c;border-top-width:1px;border-top-style:solid;padding-top:1.25rem;padding-bottom:1.5rem">
 <!-- wp:html -->
-<p class="text-sm" style="color:#7a7a7a;">&copy; <span id="year"></span> ConAir Extract Solutions Limited. Registered in England &amp; Wales.</p>
-<!-- /wp:html -->
-<!-- wp:html -->
-<ul class="flex gap-5 list-none p-0 m-0 text-sm" style="color:#9a9a9a;">
-  <li><a href="/conair/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
-</ul>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.5rem;">
+  <p class="text-sm" style="color:#7a7a7a;margin:0;">&copy; <span id="year"></span> ConAir Extract Solutions Limited. Registered in England &amp; Wales.</p>
+  <p class="text-sm" style="color:#7a7a7a;margin:0;">Company Registration No. 07732929 &nbsp;&middot;&nbsp; VAT No. 393472861</p>
+  <ul class="flex gap-5 list-none p-0 m-0 text-sm" style="color:#9a9a9a;justify-content:center;margin-top:0.25rem;">
+    <li><a href="/conair/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
+  </ul>
+</div>
 <!-- /wp:html -->
 </div>
 <!-- /wp:group -->
