@@ -19,7 +19,7 @@
     </h1>
     <p class="max-w-2xl mx-auto mb-10 font-medium reveal" style="font-size:1.15rem;line-height:1.7;color:#9ca3af;">
       Professional commercial kitchen ventilation cleaning across Bristol &amp; Somerset.<br>
-      Qualified in ventilation hygiene to National Occupational Standards BSEV11, in line with BESA TR19 &amp; NAADUK.<br>
+      Qualified in ventilation hygiene to National Occupational Standards BSEHV11, in line with BESA TR19 &amp; NAADUK.<br>
       Protecting your business from fire risk and failed inspections.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center reveal">

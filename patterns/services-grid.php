@@ -22,8 +22,8 @@
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Specialist Grease Extract Cleaning</h3>
-        <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">In line with NOS BSEV11 / BESA TR19 Grease &amp; NAADUK. Fully documented and self-certified on completion.</p>
-        <p class="mt-3" style="font-size:12px;color:#00b4a2;font-weight:600;letter-spacing:0.05em;">NOS BSEV11 &bull; BESA TR19 &bull; NAADUK</p>
+        <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">In line with NOS BSEHV11 / BESA TR19 Grease &amp; NAADUK. Fully documented and self-certified on completion.</p>
+        <p class="mt-3" style="font-size:12px;color:#00b4a2;font-weight:600;letter-spacing:0.05em;">NOS BSEHV11 &bull; BESA TR19 &bull; NAADUK</p>
         <a href="<?php echo esc_url( home_url( '/services/grease-extract-cleaning/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
