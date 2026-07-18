@@ -9,6 +9,7 @@ define( 'CONAIR_VERSION', '1.0.0' );
 
 require_once get_template_directory() . '/inc/seed-content.php';
 require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/testimonials.php';
 
 /**
  * Cache-busting version for a theme asset — the file's own mtime, so every
@@ -166,12 +167,11 @@ function conair_register_pattern_categories(): void {
 add_action( 'init', 'conair_register_pattern_categories' );
 
 // ═══════════════════════════════════════════════════════════════
-//  5. CUSTOM POST TYPES  (optional — add custom CPTs here later)
+//  5. CUSTOM POST TYPES
 // ═══════════════════════════════════════════════════════════════
 
-// Example placeholder — uncomment and expand when needed:
-// function conair_register_cpts(): void { ... }
-// add_action( 'init', 'conair_register_cpts' );
+// Testimonial CPT (registration, meta box, seeding) lives in
+// inc/testimonials.php — required near the top of this file.
 
 // ═══════════════════════════════════════════════════════════════
 //  6. SCHEMA / SEO HELPERS
