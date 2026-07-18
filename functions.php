@@ -10,6 +10,7 @@ define( 'CONAIR_VERSION', '1.0.0' );
 require_once get_template_directory() . '/inc/seed-content.php';
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/testimonials.php';
+require_once get_template_directory() . '/inc/forms.php';
 
 /**
  * Cache-busting version for a theme asset — the file's own mtime, so every

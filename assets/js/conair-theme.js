@@ -138,9 +138,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ──────────────────────────────────────────────────────────────
-       5.  QUOTE FORM — UI feedback on submit
-       Real submission requires a server-side handler or CF7 / WPForms.
-       This gives instant visual confirmation while the integration is set up.
+       5.  QUOTE FORM — real submission via inc/forms.php (admin-post.php)
+       The <form> already works with JS disabled (a plain POST that
+       redirects back with ?quote=sent / ?quote=error). This intercepts
+       the submit to send it via fetch() instead, so the visitor gets an
+       inline result without leaving/reloading the page.
     ────────────────────────────────────────────────────────────── */
     const quoteForm = document.getElementById('quote-form');
 
@@ -150,19 +152,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const btn    = document.getElementById('submit-btn');
             const status = document.getElementById('form-status');
+            const originalBtnText = btn ? btn.textContent : '';
 
             if (btn) {
-                btn.textContent      = '✓ Request Sent';
-                btn.style.background = '#141414';
-                btn.style.color      = '#00b4a2';
-                btn.style.border     = '1.5px solid rgba(0,180,162,0.5)';
-                btn.disabled         = true;
+                btn.disabled    = true;
+                btn.textContent = 'Sending…';
+            }
+            if (status) {
+                status.textContent = '';
+                status.style.color = '#9a9a9a';
             }
 
-            if (status) {
-                status.textContent = 'Your quotation request has been sent. We will respond within 24 hours.';
-                status.style.color = '#00b4a2';
-            }
+            fetch(quoteForm.action, {
+                method: 'POST',
+                body: new FormData(quoteForm),
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                credentials: 'same-origin'
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result && result.success) {
+                        if (btn) {
+                            btn.textContent      = '✓ Request Sent';
+                            btn.style.background = '#141414';
+                            btn.style.color      = '#00b4a2';
+                            btn.style.border     = '1.5px solid rgba(0,180,162,0.5)';
+                        }
+                        if (status) {
+                            status.textContent = (result.data && result.data.message) || 'Your quotation request has been sent. We will respond within 24 hours.';
+                            status.style.color = '#00b4a2';
+                        }
+                        quoteForm.reset();
+                    } else {
+                        throw new Error((result && result.data && result.data.message) || 'Something went wrong.');
+                    }
+                })
+                .catch(error => {
+                    if (btn) {
+                        btn.disabled    = false;
+                        btn.textContent = originalBtnText;
+                    }
+                    if (status) {
+                        status.textContent = error.message || 'Sorry, something went wrong sending your request — please call us instead.';
+                        status.style.color = '#ff6b6b';
+                    }
+                });
         });
     }
 

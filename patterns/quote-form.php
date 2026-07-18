@@ -3,10 +3,12 @@
  * Title: Get a Quote — Contact Form
  * Slug: conair-theme/quote-form
  * Categories: conair-sections, conair-cta
- * Description: Full quotation request form with name, phone, email, service selector, and message.
- * Note: Wire up to Contact Form 7, WPForms, or Gravity Forms for real submission handling.
- *       The built-in JS in conair-theme.js provides UI feedback only.
+ * Description: Full quotation request form with name, phone, email, service selector, and message. Submits to inc/forms.php via admin-post.php — no form plugin required.
  */
+
+// No-JS fallback: inc/forms.php redirects back here with ?quote=sent or
+// ?quote=error when JavaScript didn't intercept the submit.
+$conair_quote_result = isset( $_GET['quote'] ) ? sanitize_key( wp_unslash( $_GET['quote'] ) ) : '';
 ?>
 <!-- wp:html -->
 <section id="quote" style="background:#111111;border-top:1px solid #242424;">
@@ -16,7 +18,13 @@
     <h2 class="font-black text-white leading-tight mb-4" style="font-size:clamp(1.8rem,4vw,3rem);">Ready to Get Compliant?</h2>
     <div class="rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-left" style="background:#141414;border:1px solid #2e2e2e;">
       <h3 class="text-white font-bold mb-6" style="font-size:1.1rem;">Request a Quotation</h3>
-      <form id="quote-form" class="space-y-5" novalidate aria-label="Quotation request">
+      <form id="quote-form" class="space-y-5" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate aria-label="Quotation request">
+        <input type="hidden" name="action" value="conair_submit_quote_form">
+        <?php wp_nonce_field( 'conair_quote_form', 'conair_quote_nonce' ); ?>
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label for="hp-website">Website</label>
+          <input type="text" id="hp-website" name="hp_website" tabindex="-1" autocomplete="off">
+        </div>
         <div>
           <label for="f-name" class="block font-semibold mb-2 uppercase tracking-wider" style="font-size:12px;color:#9a9a9a;">
             Full Name <span style="color:#00b4a2;" aria-hidden="true">*</span><span class="sr-only">(required)</span>
@@ -59,7 +67,13 @@
         <button id="submit-btn" type="submit" class="btn-teal w-full font-bold py-4 px-6 rounded-xl min-h-tap" style="font-size:1rem;background:#00b4a2;color:#0c0c0c;">
           Send My Quotation Request
         </button>
-        <div id="form-status" role="status" aria-live="polite" aria-atomic="true" class="text-center text-sm" style="min-height:1.4rem;color:#9a9a9a;"></div>
+        <div id="form-status" role="status" aria-live="polite" aria-atomic="true" class="text-center text-sm" style="min-height:1.4rem;color:<?php echo 'sent' === $conair_quote_result ? '#00b4a2' : ( 'error' === $conair_quote_result ? '#ff6b6b' : '#9a9a9a' ); ?>;"><?php
+			if ( 'sent' === $conair_quote_result ) {
+				esc_html_e( 'Your quotation request has been sent. We will respond within 24 hours.', 'conair-theme' );
+			} elseif ( 'error' === $conair_quote_result ) {
+				esc_html_e( 'Sorry, something went wrong sending your request — please call us instead.', 'conair-theme' );
+			}
+		?></div>
       </form>
       <p class="text-sm mt-5 text-center" style="color:#9a9a9a;">
         We respond within 24 hours — or call us directly:
