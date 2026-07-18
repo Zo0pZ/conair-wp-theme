@@ -1,7 +1,8 @@
 /**
  * ConAir Extract Solutions — Theme JavaScript
  *
- * Handles: mobile nav toggle, scroll-reveal, before/after slider, quote form.
+ * Handles: mobile nav toggle, scroll-reveal, before/after slider,
+ * testimonials carousel, quote form.
  * All logic wrapped in DOMContentLoaded so it's safe to load from footer.
  */
 document.addEventListener('DOMContentLoaded', function () {
@@ -138,7 +139,48 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ──────────────────────────────────────────────────────────────
-       5.  QUOTE FORM — real submission via inc/forms.php (admin-post.php)
+       5.  TESTIMONIALS CAROUSEL
+       Native horizontal scroll + snap does the heavy lifting (and
+       covers touch/swipe for free); the chevrons just nudge it by
+       roughly one "page" and disable themselves at either end.
+    ────────────────────────────────────────────────────────────── */
+    const testimonialTrack = document.getElementById('testimonial-track');
+    const testimonialPrev  = document.getElementById('testimonial-prev');
+    const testimonialNext  = document.getElementById('testimonial-next');
+
+    if (testimonialTrack && testimonialPrev && testimonialNext) {
+        const scrollByPage = (direction) => {
+            testimonialTrack.scrollBy({
+                left: direction * testimonialTrack.clientWidth * 0.9,
+                behavior: 'smooth'
+            });
+        };
+
+        testimonialPrev.addEventListener('click', () => scrollByPage(-1));
+        testimonialNext.addEventListener('click', () => scrollByPage(1));
+
+        const updateNavState = () => {
+            const maxScroll = testimonialTrack.scrollWidth - testimonialTrack.clientWidth;
+            testimonialPrev.disabled = testimonialTrack.scrollLeft <= 1;
+            testimonialNext.disabled = testimonialTrack.scrollLeft >= maxScroll - 1;
+        };
+
+        let tracking = false;
+        testimonialTrack.addEventListener('scroll', () => {
+            if (tracking) return;
+            tracking = true;
+            requestAnimationFrame(() => {
+                updateNavState();
+                tracking = false;
+            });
+        });
+
+        window.addEventListener('resize', updateNavState);
+        updateNavState();
+    }
+
+    /* ──────────────────────────────────────────────────────────────
+       6.  QUOTE FORM — real submission via inc/forms.php (admin-post.php)
        The <form> already works with JS disabled (a plain POST that
        redirects back with ?quote=sent / ?quote=error). This intercepts
        the submit to send it via fetch() instead, so the visitor gets an

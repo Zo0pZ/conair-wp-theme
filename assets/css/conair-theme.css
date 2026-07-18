@@ -1219,3 +1219,99 @@ header.wp-block-template-part:has(.conair-site-header) {
   border-color: #00b4a2;
   color: #00b4a2;
 }
+
+/* ────────────────────────────────────────────────────────────────
+   16. TESTIMONIALS CAROUSEL
+   ──────────────────────────────────────────────────────────────── */
+
+.testimonial-carousel {
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 2px 12px;
+}
+
+@media (min-width: 640px) {
+  .testimonial-track {
+    gap: 1.5rem;
+  }
+}
+
+.testimonial-track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-track:focus-visible {
+  outline: 2px solid #00b4a2;
+  outline-offset: 4px;
+  border-radius: 1rem;
+}
+
+.testimonial-card {
+  flex: 0 0 auto;
+  width: 88%;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .testimonial-card {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card {
+    width: calc(33.333% - 16px);
+  }
+}
+
+.testimonial-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid #2e2e2e;
+  color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.testimonial-nav-prev {
+  left: 4px;
+}
+
+.testimonial-nav-next {
+  right: 4px;
+}
+
+.testimonial-nav-btn:hover:not(:disabled) {
+  border-color: rgba(0, 180, 162, 0.6);
+  color: #00b4a2;
+}
+
+.testimonial-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.testimonial-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
