@@ -205,7 +205,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 status.style.color = '#9a9a9a';
             }
 
-            fetch(quoteForm.action, {
+            // Use getAttribute() here, not the .action property: the form
+            // has a hidden field named "action" (required by WordPress's
+            // admin-post.php routing), and a form control named "action"
+            // shadows HTMLFormElement's built-in .action property — so
+            // quoteForm.action resolves to that <input> element, not the
+            // submit URL.
+            fetch(quoteForm.getAttribute('action'), {
                 method: 'POST',
                 body: new FormData(quoteForm),
                 headers: { 'X-Requested-With': 'XMLHttpRequest' },
