@@ -52,8 +52,8 @@
         <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 flex-shrink-0" style="background:rgba(0,180,162,0.12);color:#00b4a2;" aria-hidden="true">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <h3 class="font-bold text-white mb-2" style="font-size:1rem;">15+ Years in the Industry</h3>
-        <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">A trusted, professional company with over 15 years&#8217; experience in the ventilation industry across the Bristol and Somerset region.</p>
+        <h3 class="font-bold text-white mb-2" style="font-size:1rem;">Experienced in the Industry</h3>
+        <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">A trusted, professional company with many years&#8217; experience in the ventilation industry across the Bristol and Somerset region.</p>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">

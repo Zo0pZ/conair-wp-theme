@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             btn.style.border     = '1.5px solid rgba(0,180,162,0.5)';
                         }
                         if (status) {
-                            status.textContent = (result.data && result.data.message) || 'Your quotation request has been sent. We will respond within 24 hours.';
+                            status.textContent = (result.data && result.data.message) || 'Your enquiry has been sent. We will be in touch.';
                             status.style.color = '#00b4a2';
                         }
                         quoteForm.reset();

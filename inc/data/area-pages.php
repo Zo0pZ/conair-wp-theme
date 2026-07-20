@@ -97,8 +97,8 @@ return [
       <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Accredited installers of FireMac fire-rated access doors for kitchen extract ductwork.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
-      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">15+ Years Experience</div>
-      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Over 15 years of commercial kitchen ventilation experience across the South West.</p>
+      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">Experienced Specialists</div>
+      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Many years of commercial kitchen ventilation experience across the South West.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
       <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">&#163;5M Public Liability</div>
@@ -218,8 +218,8 @@ return [
       <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Accredited installers of FireMac fire-rated access doors for kitchen extract ductwork.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
-      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">15+ Years Experience</div>
-      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Over 15 years of commercial kitchen ventilation experience across the South West.</p>
+      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">Experienced Specialists</div>
+      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Many years of commercial kitchen ventilation experience across the South West.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
       <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">&#163;5M Public Liability</div>
@@ -339,8 +339,8 @@ return [
       <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Accredited installers of FireMac fire-rated access doors for kitchen extract ductwork.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
-      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">15+ Years Experience</div>
-      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Over 15 years of commercial kitchen ventilation experience across the South West.</p>
+      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">Experienced Specialists</div>
+      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Many years of commercial kitchen ventilation experience across the South West.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
       <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">&#163;5M Public Liability</div>
@@ -460,8 +460,8 @@ return [
       <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Accredited installers of FireMac fire-rated access doors for kitchen extract ductwork.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
-      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">15+ Years Experience</div>
-      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Over 15 years of commercial kitchen ventilation experience across the South West.</p>
+      <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">Experienced Specialists</div>
+      <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Many years of commercial kitchen ventilation experience across the South West.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
       <div class="font-bold mb-2" style="color:#00b4a2;font-size:0.9rem;">&#163;5M Public Liability</div>

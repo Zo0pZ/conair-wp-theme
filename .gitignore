@@ -1,1 +1,5 @@
 node_modules/
+
+# Tool/session state and QA screenshots
+.playwright-mcp/
+*.png

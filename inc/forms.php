@@ -2,7 +2,7 @@
 /**
  * ConAir Extract Solutions — Form Handling
  *
- * Handles the "Get a Quote" form (patterns/quote-form.php), which appears
+ * Handles the "Contact Us" form (patterns/quote-form.php), which appears
  * on the homepage and on any Page using the default Page template
  * (including the Contact page). One form definition, one handler — both
  * placements post to the same endpoint.
@@ -119,7 +119,7 @@ function conair_handle_quote_form_submission(): void {
 	}
 
 	if ( $is_ajax ) {
-		wp_send_json_success( [ 'message' => 'Thanks — we will be in touch within 24 hours.' ] );
+		wp_send_json_success( [ 'message' => 'Thanks — we will be in touch.' ] );
 	}
 	wp_safe_redirect( add_query_arg( 'quote', 'sent', $page ) );
 	exit;

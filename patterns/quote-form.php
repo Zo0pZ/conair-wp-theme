@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Get a Quote — Contact Form
+ * Title: Contact Us — Contact Form
  * Slug: conair-theme/quote-form
  * Categories: conair-sections, conair-cta
  * Description: Full quotation request form with name, phone, email, service selector, and message. Submits to inc/forms.php via admin-post.php — no form plugin required.
@@ -14,10 +14,10 @@ $conair_quote_result = isset( $_GET['quote'] ) ? sanitize_key( wp_unslash( $_GET
 <section id="quote" style="background:#111111;border-top:1px solid #242424;">
   <div style="height:3px;background:linear-gradient(90deg,transparent,#00b4a2,transparent);" aria-hidden="true"></div>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center reveal">
-    <div class="badge mb-5 mx-auto" style="display:inline-flex;">Get a Quote</div>
+    <div class="badge mb-5 mx-auto" style="display:inline-flex;">Contact Us</div>
     <h2 class="font-black text-white leading-tight mb-4" style="font-size:clamp(1.8rem,4vw,3rem);">Ready to Get Compliant?</h2>
     <div class="rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-left" style="background:#141414;border:1px solid #2e2e2e;">
-      <h3 class="text-white font-bold mb-6" style="font-size:1.1rem;">Request a Quotation</h3>
+      <h3 class="text-white font-bold mb-6" style="font-size:1.1rem;">Contact Us</h3>
       <form id="quote-form" class="space-y-5" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate aria-label="Quotation request">
         <input type="hidden" name="action" value="conair_submit_quote_form">
         <?php wp_nonce_field( 'conair_quote_form', 'conair_quote_nonce' ); ?>
@@ -65,18 +65,18 @@ $conair_quote_result = isset( $_GET['quote'] ) ? sanitize_key( wp_unslash( $_GET
           <textarea id="f-message" name="message" rows="3" placeholder="e.g. Pub kitchen, last cleaned 12 months ago, 3 canopies…" class="field" style="resize:none;min-height:96px;"></textarea>
         </div>
         <button id="submit-btn" type="submit" class="btn-teal w-full font-bold py-4 px-6 rounded-xl min-h-tap" style="font-size:1rem;background:#00b4a2;color:#0c0c0c;">
-          Send My Quotation Request
+          Contact Us
         </button>
         <div id="form-status" role="status" aria-live="polite" aria-atomic="true" class="text-center text-sm" style="min-height:1.4rem;color:<?php echo 'sent' === $conair_quote_result ? '#00b4a2' : ( 'error' === $conair_quote_result ? '#ff6b6b' : '#9a9a9a' ); ?>;"><?php
 			if ( 'sent' === $conair_quote_result ) {
-				esc_html_e( 'Your quotation request has been sent. We will respond within 24 hours.', 'conair-theme' );
+				esc_html_e( 'Your enquiry has been sent. We will be in touch.', 'conair-theme' );
 			} elseif ( 'error' === $conair_quote_result ) {
 				esc_html_e( 'Sorry, something went wrong sending your request — please call us instead.', 'conair-theme' );
 			}
 		?></div>
       </form>
       <p class="text-sm mt-5 text-center" style="color:#9a9a9a;">
-        We respond within 24 hours — or call us directly:
+        Or call us directly:
         <a href="tel:+441934528450" class="font-semibold underline-offset-2 contact-link" style="color:#00b4a2;">01934 528 450</a>
         <span style="margin-left:8px;color:#9a9a9a;">or mobile <a href="tel:+447891240743" style="color:#00b4a2;" class="font-semibold contact-link">07891 240 743</a></span>
       </p>

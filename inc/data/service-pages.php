@@ -41,8 +41,8 @@ return [
     </div>
     <div class="flex items-start gap-4">
       <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
-      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Access door assessment</strong> — we identify any access shortfalls and can supply and install fire-rated access doors where required.</p>
-    </div></div><p class="mt-8 text-sm italic" style="color:#9a9a9a;">Cleaning frequency is determined by TR19 risk assessment — typically every 6 or 12 months depending on cooking volume and fuel type.</p>
+      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Access door assessment</strong> — we identify any access shortfalls and can supply and install access doors where required.</p>
+    </div></div><p class="mt-8 text-sm italic" style="color:#9a9a9a;">Cleaning frequency is determined by TR19 and NAADUK guidelines — typically every 6 or 12 months depending on cooking volume and fuel type.</p>
   </div>
 </section>
 
@@ -55,7 +55,7 @@ return [
     <div class="space-y-4">
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
       <h3 class="font-bold text-white mb-3" style="font-size:1rem;">How often should commercial kitchen grease ducts be cleaned?</h3>
-      <p style="font-size:15px;color:#9a9a9a;line-height:1.7;">Frequency is determined by a TR19 risk assessment based on cooking type and volume. Heavy-use fryer kitchens typically require cleaning every 6 months; lighter-use kitchens may need it annually. ConAir can advise on the correct frequency for your setup.</p>
+      <p style="font-size:15px;color:#9a9a9a;line-height:1.7;">Frequency is determined by TR19 and NAADUK guidelines based on cooking type and volume. Heavy-use fryer kitchens typically require cleaning every 6 months; lighter-use kitchens may need it annually. ConAir can advise on the correct frequency for your setup.</p>
     </div>
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
       <h3 class="font-bold text-white mb-3" style="font-size:1rem;">What is BESA TR19 and why does it matter?</h3>
@@ -298,7 +298,7 @@ return [
 	],
 	'extractor-fan-replacement' => [
 		'title'   => 'Commercial Extractor Fan Replacement',
-		'excerpt' => 'Supply and installation of commercial extractor fans for kitchens and laundry rooms across Bristol & Somerset. Expert selection, fitting and commissioning.',
+		'excerpt' => 'Supply and installation of commercial extractor fans for commercial kitchens across Bristol & Somerset. Expert selection, fitting and commissioning.',
 		'content' => '<section class="py-16 sm:py-20" style="background:#111111;border-top:1px solid #1c1c1c;">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <p class="mb-10 reveal" style="font-size:1.05rem;color:#9ca3af;line-height:1.8;max-width:700px;">A failing or undersized extractor fan is the most common cause of poor kitchen ventilation. Signs include poor smoke clearance, excessive heat, grease migrating beyond the canopy, or a fan that runs constantly without adequate airflow. ConAir assesses your existing system, sources the right replacement, and commissions it correctly.</p>
@@ -309,7 +309,7 @@ return [
     </div>
     <div class="flex items-start gap-4">
       <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
-      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Fan selection</strong> — we source commercial-grade fans suited to kitchen extract and laundry extraction, including high-temperature rated fans for kitchen use.</p>
+      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Fan selection</strong> — we source commercial-grade fans suited to kitchen extract, including high-temperature rated fans for kitchen use.</p>
     </div>
     <div class="flex items-start gap-4">
       <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
@@ -318,10 +318,6 @@ return [
     <div class="flex items-start gap-4">
       <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
       <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Kitchen extract fans</strong> — roof-mounted, wall-mounted, and inline fans for commercial kitchen extract systems.</p>
-    </div>
-    <div class="flex items-start gap-4">
-      <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
-      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Laundry extraction fans</strong> — suitable for tumble dryer and laundry room extraction systems.</p>
     </div>
     <div class="flex items-start gap-4">
       <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
