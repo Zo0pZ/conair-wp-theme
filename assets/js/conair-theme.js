@@ -149,11 +149,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const testimonialNext  = document.getElementById('testimonial-next');
 
     if (testimonialTrack && testimonialPrev && testimonialNext) {
+        // Custom eased scroll instead of CSS `scroll-behavior: smooth` —
+        // native smooth-scroll easing is inconsistent (near-linear in some
+        // browsers) and can't be tuned. A short ease-in-out over a fixed
+        // duration reads as a deliberate "page" transition instead.
+        let scrollAnimation = null;
+        const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+        const animateScrollTo = (target, duration = 420) => {
+            if (scrollAnimation) cancelAnimationFrame(scrollAnimation);
+            const start = testimonialTrack.scrollLeft;
+            const distance = target - start;
+            const startTime = performance.now();
+
+            const step = (now) => {
+                const progress = Math.min((now - startTime) / duration, 1);
+                testimonialTrack.scrollLeft = start + distance * easeInOutCubic(progress);
+                scrollAnimation = progress < 1 ? requestAnimationFrame(step) : null;
+            };
+            scrollAnimation = requestAnimationFrame(step);
+        };
+
         const scrollByPage = (direction) => {
-            testimonialTrack.scrollBy({
-                left: direction * testimonialTrack.clientWidth * 0.9,
-                behavior: 'smooth'
-            });
+            const maxScroll = testimonialTrack.scrollWidth - testimonialTrack.clientWidth;
+            const target = Math.min(
+                Math.max(testimonialTrack.scrollLeft + direction * testimonialTrack.clientWidth * 0.9, 0),
+                maxScroll
+            );
+            animateScrollTo(target);
         };
 
         testimonialPrev.addEventListener('click', () => scrollByPage(-1));
