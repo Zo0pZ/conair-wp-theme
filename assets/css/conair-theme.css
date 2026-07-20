@@ -1233,10 +1233,20 @@ header.wp-block-template-part:has(.conair-site-header) {
   gap: 0.75rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  /* Real padding reserves scrollable space so scrollLeft can rest at 0
+     without a card sitting flush under the buttons; scroll-padding tells
+     the (mandatory) snap engine to keep honouring that clearance at every
+     snap stop, not just the first/last — plain padding alone gets
+     scrolled straight past on snap. The mask fades anything that still
+     grazes the edge between snap stops, so it never reads as overlap. */
+  padding: 4px 56px 12px;
+  scroll-padding-left: 56px;
+  scroll-padding-right: 56px;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 4px 56px 12px;
+  mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent);
 }
 
 @media (min-width: 640px) {
@@ -1256,6 +1266,10 @@ header.wp-block-template-part:has(.conair-site-header) {
 }
 
 .testimonial-card {
+  /* Reset: <blockquote>'s UA-stylesheet default is `margin: 1em 40px`,
+     which was stacking with the flex `gap` above to make the real gap
+     between cards nearly 3x the intended value. */
+  margin: 0;
   flex: 0 0 auto;
   width: 88%;
   scroll-snap-align: start;
