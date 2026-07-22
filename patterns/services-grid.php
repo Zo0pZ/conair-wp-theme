@@ -96,7 +96,7 @@
         <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(0,180,162,0.12);color:#00b4a2;" aria-hidden="true">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
         </div>
-        <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Ductwork Alterations &amp; Filter Supply</h3>
+        <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Ductwork Alterations</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Ductwork modifications and alterations to suit changing kitchen layouts. We also supply filters in all types and sizes for your existing system.</p>
         <a href="<?php echo esc_url( home_url( '/services/ductwork-alterations/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>

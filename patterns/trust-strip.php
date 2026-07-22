@@ -3,7 +3,7 @@
  * Title: Trust Strip — Credentials Bar
  * Slug: conair-theme/trust-strip
  * Categories: conair-sections
- * Description: Four credential pills: Fully Insured, Quality Assured, Fire Safety, Local Experts.
+ * Description: Four credential pills: Fully Insured, TR19 Compliant, Fire Safety, Local Experts.
  */
 ?>
 <!-- wp:html -->
