@@ -34,7 +34,7 @@
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">General Ventilation Cleaning</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Extract &amp; supply duct cleaning in line with BESA TR19 internal cleanliness of ventilation systems.</p>
         <p class="mt-3" style="font-size:12px;color:#00b4a2;font-weight:600;letter-spacing:0.05em;">BESA TR19 Compliant</p>
-        <a href="<?php echo esc_url( home_url( '/services/ventilation-cleaning/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/general-ventilation-cleaning/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -43,7 +43,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Tumble Dryer Extraction Cleaning</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Lint-blocked extraction systems are a major fire risk. We clean and clear tumble dryer ducting to keep your laundry appliances safe and efficient.</p>
-        <a href="<?php echo esc_url( home_url( '/services/tumble-dryer-extraction-cleaning/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/tumble-dryer-extraction/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -71,7 +71,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Extractor Fan Replacements</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Supply and installation of commercial extractor fans. We assess, recommend, and fit the right unit for your kitchen or laundry setup.</p>
-        <a href="<?php echo esc_url( home_url( '/services/extractor-fan-replacement/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/extractor-fan-replacements/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
@@ -80,7 +80,7 @@
         </div>
         <h3 class="font-bold text-white mb-2" style="font-size:1.05rem;">Canopy Hood System Installations</h3>
         <p style="font-size:14px;color:#9a9a9a;line-height:1.65;">Full commercial canopy hood and extraction system installations designed and fitted to meet your kitchen layout and compliance requirements.</p>
-        <a href="<?php echo esc_url( home_url( '/services/canopy-hood-installation/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
+        <a href="<?php echo esc_url( home_url( '/services/canopy-hood-installations/' ) ); ?>" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style="color:#00b4a2;">Learn more &#8594;</a>
       </div>
 
       <div class="glow-card rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
