@@ -1,7 +1,7 @@
 {
   "name": "conair-theme",
   "private": true,
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Build tooling for the ConAir Extract Solutions WordPress theme's compiled Tailwind stylesheet.",
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify",
