@@ -729,17 +729,32 @@ header.wp-block-template-part:has(.conair-site-header) {
 }
 
 /* ────────────────────────────────────────────────────────────────
-   13. SERVICE PAGE TEMPLATE — inline breadcrumb current-page title
+   13. SERVICE PAGE TEMPLATE — breadcrumb layout & current-page title
    ──────────────────────────────────────────────────────────────── */
 
 /* The final breadcrumb crumb needs to be the actual page title, which
    requires a real wp:post-title block (a raw wp:html block can't contain
    dynamic post data) — but post-title always renders its own block-level
-   heading. This pulls that heading back onto the same line as the
-   breadcrumb nav immediately before it. */
-.breadcrumb-current {
-  display: inline;
+   heading, with its own margin and (per theme.json's global h3 element
+   style) a 1.3 line-height, which throws the crumb out of line with the
+   preceding links and › separators. Flexing the nav keeps every crumb —
+   links, separators, and the heading — vertically centred on one line
+   regardless of the heading's own font metrics, and flex-wrap lets the
+   whole line wrap gracefully on narrow viewports. margin stays
+   !important because the original inline-flow fix already needed it to
+   beat WP's own post-title/global-style CSS (same class-vs-class
+   specificity tie, resolved by print order); line-height is kept
+   !important alongside it for the same reason rather than relying on
+   the same tie going our way. */
+nav[aria-label="Breadcrumb"] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav[aria-label="Breadcrumb"] .breadcrumb-current {
   margin: 0 !important;
+  line-height: 1 !important;
 }
 
 /* ────────────────────────────────────────────────────────────────
