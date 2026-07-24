@@ -461,8 +461,8 @@ return [
 </section>',
 	],
 	'ductwork-alterations' => [
-		'title'   => 'Commercial Ductwork Alterations & Modifications',
-		'excerpt' => 'Commercial ductwork alterations, extensions and modifications across Bristol & Somerset. Adapt your ventilation system to suit changing kitchen layouts and equipment.',
+		'title'   => 'Commercial Ductwork Alterations & Filter Supply',
+		'excerpt' => 'Commercial ductwork alterations, extensions and modifications, plus grease filter supply in all types and sizes, across Bristol & Somerset. Adapt your ventilation system to suit changing kitchen layouts and equipment.',
 		'content' => '<section class="py-16 sm:py-20" style="background:#111111;border-top:1px solid #1c1c1c;">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <p class="mb-10 reveal" style="font-size:1.05rem;color:#9ca3af;line-height:1.8;max-width:700px;">Commercial kitchens evolve — equipment is moved, new cooking stations are added, or the layout is reconfigured entirely. Whenever cooking equipment changes, the ventilation system needs to change with it. Poorly adapted ductwork leads to poor grease capture, compliance failures, and increased fire risk. ConAir handles ductwork modifications of all scales.</p>
@@ -495,6 +495,34 @@ return [
 </section>
 
 <section class="py-16 sm:py-20" style="background:#0c0c0c;border-top:1px solid #1c1c1c;">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <h2 class="font-black text-white mb-6 reveal" style="font-size:clamp(1.4rem,3vw,1.9rem);">Filter Supply</h2>
+    <p class="mb-10 reveal" style="font-size:1.05rem;color:#9ca3af;line-height:1.8;max-width:700px;">Commercial kitchen canopy filters are the first line of defence against grease entering the extract ductwork. Most canopy filters are durable stainless steel or aluminium and last for years — but if a filter is damaged, lost, or the wrong size for your canopy, ConAir can source and supply a replacement.</p>
+    <div class="space-y-5 reveal">
+    <div class="flex items-start gap-4">
+      <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
+      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Baffle filters</strong> — the most common commercial kitchen filter type, made from stainless steel or aluminium, with a labyrinth design for high grease capture efficiency.</p>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
+      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Cassette filters</strong> — typically used in higher-capacity commercial kitchens and fast food operations where maximum grease capture is required.</p>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
+      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Mesh filters</strong> — used in lower-duty applications or as secondary filters in some canopy designs.</p>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
+      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Filter supply</strong> — We can supply any size and type of filter.</p>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="flex-shrink-0 mt-1 text-xl" style="color:#00b4a2;" aria-hidden="true">&#10003;</span>
+      <p style="font-size:15px;color:#d4d4d4;line-height:1.7;"><strong class="text-white">Paired with cleaning visits</strong> — filters can be supplied and fitted as part of a scheduled TR19 cleaning visit, or on their own whenever a replacement is needed.</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="py-16 sm:py-20" style="background:#111111;border-top:1px solid #1c1c1c;">
   <div class="max-w-3xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-10">
       <div class="badge mb-5 mx-auto reveal" style="display:inline-flex;">FAQ</div>
@@ -512,6 +540,14 @@ return [
     <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
       <h3 class="font-bold text-white mb-3" style="font-size:1rem;">Does altered ductwork need to be cleaned and inspected?</h3>
       <p style="font-size:15px;color:#9a9a9a;line-height:1.7;">Yes. Any newly installed or altered ductwork should be inspected to ensure it meets TR19 cleanliness standards. We can combine alteration work with a post-installation inspection.</p>
+    </div>
+    <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
+      <h3 class="font-bold text-white mb-3" style="font-size:1rem;">What is the difference between baffle and mesh filters?</h3>
+      <p style="font-size:15px;color:#9a9a9a;line-height:1.7;">Baffle filters use angled metal baffles that cause grease droplets to separate out of the airstream by inertia — they are more effective and are the standard for commercial kitchens. Mesh filters use a fine screen to physically trap droplets — they offer lower resistance but lower efficiency, typically used in lighter-duty applications.</p>
+    </div>
+    <div class="rounded-2xl p-6 reveal" style="background:#141414;border:1px solid #2e2e2e;">
+      <h3 class="font-bold text-white mb-3" style="font-size:1rem;">Can you supply filters for older or unusual canopy sizes?</h3>
+      <p style="font-size:15px;color:#9a9a9a;line-height:1.7;">Yes. We can source filters in non-standard sizes for older or bespoke canopies. Send us the dimensions and we will source the correct filter for your canopy.</p>
     </div></div>
   </div>
 </section>',
