@@ -757,6 +757,18 @@ nav[aria-label="Breadcrumb"] .breadcrumb-current {
   line-height: 1 !important;
 }
 
+/* Breadcrumb container bar — the wrapping group carries lopsided inline
+   padding (padding-top: 1.25rem / padding-bottom: 0 — set directly in the
+   style="" attribute in templates/page-service.html and page-area.html),
+   which pushes the breadcrumb text down against the bottom of the bar
+   instead of centring it. An inline style attribute always beats an
+   external stylesheet rule regardless of selector specificity, so
+   !important is required here (not optional) to override it. */
+.wp-block-group:has(> nav[aria-label="Breadcrumb"]) {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
 /* ────────────────────────────────────────────────────────────────
    14. SERVICE PAGE BODY CONTENT (.conair-* classes)
    ──────────────────────────────────────────────────────────────── */
